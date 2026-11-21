@@ -9,3 +9,4 @@ paper/*.out
 paper/*.blg
 paper/pg*.png
 paper/p1.png
+template/
