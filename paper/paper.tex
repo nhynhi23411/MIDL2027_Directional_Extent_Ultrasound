@@ -2,7 +2,8 @@
 
 \usepackage{booktabs}
 \usepackage{multirow}
-\usepackage{amsmath}
+\usepackage{amsmath,amssymb}
+\DeclareMathOperator{\smax}{smax}
 \jmlrvolume{-- Under Review}
 \jmlryear{2027}
 \jmlrworkshop{Full Paper -- MIDL 2027 submission}
@@ -67,11 +68,55 @@ where $\rho$ is the Huber loss \citep{huber1964robust} with $\delta=0.25$, avera
 \subsection{Post-hoc variants (v2, v3)}
 After the first study (v1) we examined why the loss failed. Two hypotheses followed: the mean over directions dilutes the signal from the one direction the metric measures, and training on lesion-positive images only leaves no pressure against foreground on lesion-free images.
 
-\textbf{v2 (Feret-aligned).} A second term acts on the soft maximum over directions of the width, $\mathrm{smax}_k\,\bar w_k(P)$ with $\bar w_k=w_k/\max_j w_j(M)$ and temperature 0.05, compared with the same soft maximum applied to $M$ so that smoothing bias cancels, again with a Huber penalty; $\lambda$ multiplies the sum of both terms. In this second study, lesion-free BUSI images are included in training for \emph{all} losses and all weights are re-tuned.
+\textbf{v2 (Feret-aligned).} With $m=\max(\max_j w_j(M),0.05)$ (detached) and the soft maximum $\smax_{\tau_k}(v)=\tau_k\log\sum_{k}e^{v_k/\tau_k}$, $\tau_k=0.05$, a second term compares the soft-maximum widths of $P$ and $M$,
+\begin{equation}\label{eq:v2}
+\mathcal{L}_{\mathrm{v2}}=\mathcal{L}_{\mathrm{ext}}+\rho\!\left(\smax_{\tau_k}\!\Big(\tfrac{w(P)}{m}\Big)-\smax_{\tau_k}\!\Big(\tfrac{w(M)}{m}\Big)\right),
+\end{equation}
+so that the smoothing bias of the soft maximum cancels, and the objective is $\mathcal{L}_{\mathrm{Dice+BCE}}+\lambda\mathcal{L}_{\mathrm{v2}}$. In this second study, lesion-free BUSI images are included in training for \emph{all} losses and all weights are re-tuned. Proposition~\ref{prop:dilution} and~\ref{prop:smax} explain why this term targets the measured quantity.
 
-\textbf{v3 (negative-aware).} The first study and v2 revealed that extent terms leave lesion-free images unconstrained. v3 adds, to the v2 objective, $\lambda_n$ times the mean of the top 1\% foreground probabilities of each lesion-free image, which pushes the maximum response to zero. To separate the effect of this penalty from that of the extent term we also train a \emph{penalty-only control}, Dice+BCE with the same penalty.
+\textbf{v3 (negative-aware).} The first study and v2 revealed that extent terms leave lesion-free images unconstrained (Proposition~\ref{prop:uniform}). With $\mathcal{N}$ the lesion-free images of a batch, $z_i$ the logit map of image $i$ and $\mathcal{T}_{q}(\cdot)$ the mean of the $q=\lceil0.01\,HW\rceil$ largest entries,
+\begin{equation}\label{eq:v3}
+\mathcal{L}_{\mathrm{v3}}=\mathcal{L}_{\mathrm{Dice+BCE}}+\lambda\mathcal{L}_{\mathrm{v2}}+\frac{\lambda_n}{|\mathcal{N}|}\sum_{i\in\mathcal{N}}\mathcal{T}_{q}\big(\sigma(z_i)\big),
+\end{equation}
+which pushes the maximum response on lesion-free images to zero. To separate the effect of this penalty from that of the extent term we also train a \emph{penalty-only control}, $\mathcal{L}_{\mathrm{Dice+BCE}}$ plus the last term of \eqref{eq:v3}.
 
 Both variants were designed after test results of the previous stage were seen; every v2 and v3 result is therefore post hoc and exploratory. Hyperparameters were chosen on development data only, and these were the only two variants tried.
+
+\subsection{Properties of the loss}\label{sec:theory}
+We state what the loss does and does not guarantee; proofs and numerical checks are in Appendix~\ref{app:proofs}. For a pixel set $S$ with $n=|S|$ and $N=HW$, let $W_k(S)=\max_{x\in S}t_k(x)-\min_{x\in S}t_k(x)$ be the exact projected width, $D(S)=\max_{x,y\in S}\|x-y\|$ the maximum Feret diameter and $D_K(S)=\max_kW_k(S)$.
+
+\begin{proposition}[Soft supports]\label{prop:support}
+For a binary mask $M$ with support $S$ and $\beta=3/\tau$: $\;W_k(S)\le w_k(M)\le W_k(S)+2\tau\big[\log n+\tfrac{N}{n}e^{-(3-2\sqrt2)/\tau}\big]$.
+\end{proposition}
+This is why $\beta=3/\tau$: $t_k$ ranges over at most $2\sqrt2<3$, so background weight $e^{-\beta}$ cannot compete with the lesion.
+
+\begin{proposition}[Extent, not position]\label{prop:translation}
+If $P'(x)=P(x-\delta)$ then $w_k(P')=w_k(P)$ for all $k$, so $\mathcal{L}_{\mathrm{ext}}$ is unchanged (shifts of $s_k^{\pm}$ cancel).
+\end{proposition}
+
+\begin{proposition}[Direction discretisation]\label{prop:K}
+With $c_K=\cos\frac{\pi}{2K}$, every pixel set satisfies $\;c_KD(S)\le D_K(S)\le D(S)$.
+\end{proposition}
+For $K=4,8,16,32$ the factor is $0.924,0.981,0.995,0.999$, so $K=16$ underestimates the Feret diameter by at most $0.48\%$.
+
+\begin{proposition}[Widths to diameter; dilution]\label{prop:dilution}
+Let $d_k=(w_k(P)-w_k(M))/\bar w_k$. (i) $|D(\hat S)-D(S)|\le\max_k|W_k(\hat S)-W_k(S)|+(c_K^{-1}-1)\max\{D(\hat S),D(S)\}$. (ii) If $\mathcal{L}_{\mathrm{ext}}\le\varepsilon$ then $\max_k|d_k|\le g(K\varepsilon)$, with $g(e)=\sqrt{2e}$ for $e\le\delta^2/2$ and $e/\delta+\delta/2$ otherwise. (iii) The factor $K$ is tight: an error $d$ in one direction gives $\mathcal{L}_{\mathrm{ext}}=\rho(d)/K$.
+\end{proposition}
+A $20\%$ width error in a single direction costs only $\rho(0.2)/16=0.00125$, so the mean over directions dilutes the signal the maximum Feret diameter reads; this is the first hypothesis behind v2.
+
+\begin{proposition}[Soft maximum]\label{prop:smax}
+$\max v\le\smax_{\tau_k}(v)\le\max v+\tau_k\log K$, so the second term of \eqref{eq:v2} is within $\tau_k\log K=0.14$ of the normalised error of $D_K$, and its gradient with respect to $w_k$ is the softmax weight $\pi_k\propto e^{w_k/(m\tau_k)}$ (longest directions first) instead of the uniform $1/K$ of \eqref{eq:ext}.
+\end{proposition}
+
+\begin{proposition}[Uniform output]\label{prop:uniform}
+If $P\equiv c$ then $w_k(P)=G_k-6(1-c)$, with $G_k$ the soft width of the whole grid ($\bar G=2.6$).
+\end{proposition}
+An empty output thus has width $\approx-3.4$, a large negative error that pushes towards foreground on lesion-positive images, whereas lesion-free images are skipped: pressure upward without pressure downward, which predicts the spurious foreground observed and motivates v3.
+
+\begin{proposition}[Overlap does not control diameter]\label{prop:dice}
+For a disk $M$ of radius $r$ and a prediction $M\cup N$ with a radial needle $N$ of area $\ell$: $\;\mathrm{Dice}=(1+e/\pi r)^{-1}\ge1-e/\pi r$ while the relative diameter error is $e=\ell/2r$.
+\end{proposition}
+With $r=40$ px and $\ell=20$ px, Dice is $0.998$ and the error $0.25$; the needle is connected, so the largest-component rule cannot remove it. This is the mechanism behind the loose coupling in Section~\ref{sec:results}.
 
 \subsection{Measurement protocol}
 The reference diameter is the maximum Feret diameter, the maximum distance between foreground pixel corners, computed exactly on the original image grid. Predictions are thresholded at 0.5, the largest connected component is kept (prespecified; keeping all foreground is a sensitivity analysis), and the probability map is mapped back to original geometry by removing letterbox padding and resizing before thresholding. Diameters are in pixels, so the endpoint is the \emph{relative} error $|\hat d-d|/d$, which is unit free. An empty prediction on a lesion-positive image has diameter 0 (relative error 1) and is counted as a missed lesion; failures are never excluded.
@@ -87,7 +132,7 @@ We use a U-Net and a DeepLabV3+ \citep{ronneberger2015unet,chen2018deeplab} with
 \subsection{Endpoints and statistics}
 The primary endpoint is the mean relative diameter error on lesion-positive test images, with seeds averaged per image. Secondary endpoints are the median, the rate of errors of at least 20\% (an operational research threshold, not a clinical one), signed bias, Dice and a boundary F1 (tolerance 2 px). We report the paired difference between the new loss and the frozen comparator with 95\% intervals from a cluster bootstrap \citep{field2007bootstrap} (5000 resamples, near-duplicate clusters resampled), per dataset and model; seed variability is reported separately. Lesion-free BUSI images are reported through the fraction with any predicted foreground and the foreground area fraction.
 
-\section{Results}
+\section{Results}\label{sec:results}
 
 \begin{table}[htbp]
 \floatconts
@@ -121,14 +166,7 @@ The primary endpoint is the mean relative diameter error on lesion-positive test
 \end{table}
 
 \paragraph{Overlap and measurement are loosely coupled.}
-\tableref{tab:main} shows Dice of 82--83\% on MMOTU and 74--77\% on BUSI, yet 19--22\% (MMOTU) and 24--29\% (BUSI) of lesions have a diameter error of at least 20\%, and the median error (6--10\%) is far below the mean (0.16--0.23): the error distribution is heavy-tailed. \figureref{fig:overlap} shows that high Dice does not exclude large diameter errors. Errors are largest for small lesions (mean 0.29--0.33 in the lowest size tertile on MMOTU against about 0.08 in the highest).
-
-\begin{figure}[htbp]
-\floatconts
-  {fig:overlap}
-  {\caption{Overlap versus measurement error on test lesions (U-Net, seed-averaged, error clipped at 1). The dotted line marks 20\% error.}}
-  {\includegraphics[width=0.78\linewidth]{figures/overlap_vs_measurement.pdf}}
-\end{figure}
+\tableref{tab:main} shows Dice of 82--83\% on MMOTU and 74--77\% on BUSI, yet 19--22\% (MMOTU) and 24--29\% (BUSI) of lesions have a diameter error of at least 20\%, and the median error (6--10\%) is far below the mean (0.16--0.23): the error distribution is heavy-tailed. Appendix~\ref{app:sup}, \figureref{fig:overlap} shows that high Dice does not exclude large diameter errors. Errors are largest for small lesions (mean 0.29--0.33 in the lowest size tertile on MMOTU against about 0.08 in the highest).
 
 \paragraph{No supported benefit of the directional loss (v1).}
 Against the strongest comparator frozen on development data, the paired differences in mean relative error (directional minus comparator; negative favours the directional loss) were $+0.003$ [$-0.008$, $+0.013$] (MMOTU, U-Net, boundary), $+0.006$ [$-0.004$, $+0.016$] (MMOTU, DeepLabV3+, Dice+BCE), $-0.008$ [$-0.049$, $+0.033$] (BUSI, U-Net, boundary) and $+0.001$ [$-0.021$, $+0.022$] (BUSI, DeepLabV3+, Dice+BCE). All intervals include zero, and the directional loss improved 47--51\% of individual lesions, no more than chance (Appendix~\ref{app:sup}, \tableref{tab:paired}). Dice differences were within $\pm0.6$ points with intervals spanning zero. Seed standard deviations of the mean error (0.003--0.025) are as large as most between-loss gaps, which is why a single-seed pilot on the development split (MMOTU U-Net: 0.133 for the directional loss against 0.164 for Dice+BCE) did not replicate on the test split with three seeds (0.160 against 0.162).
@@ -137,7 +175,7 @@ Against the strongest comparator frozen on development data, the paired differen
 On the 30 lesion-free BUSI test images, models trained with the directional loss predicted some foreground on 100\% of images, against 76\% (U-Net) and 98\% (DeepLabV3+) for Dice+BCE, with a mean foreground area fraction of 5.6--5.8\% against 2.7--3.8\%. Since the loss is computed only on lesion-positive images and rewards extent, it pushes towards over-extension without a negative-image penalty. A related effect appears in the component sensitivity analysis: keeping all foreground instead of the largest component raised the mean BUSI error of the directional loss from 0.21 to 0.49 and of the bounding-box penalty from 0.22 to 0.59, against 0.22 to 0.31 for Dice+BCE. Extent-based terms thus benefit more from component filtering, which would make a claimed gain partly a component-rule effect. On MMOTU the rule matters little (0.16 against 0.18).
 
 \paragraph{Post-hoc revisions (v2, v3).}
-\figureref{fig:forest} and \tableref{tab:v3} summarise the second and third studies (full v2 tables in Appendix~\ref{app:v2}). On MMOTU the Feret-aligned loss was \emph{worse} than the frozen comparator: $+0.018$ [$+0.006$, $+0.031$] (U-Net) and $+0.020$ [$+0.008$, $+0.033$] (DeepLabV3+), with Dice lower by 1.7 and 1.9 points. On BUSI it was not distinguishable ($+0.020$ [$-0.020$, $+0.061$] and $+0.002$ [$-0.040$, $+0.047$]). Including lesion-free images greatly reduced spurious foreground for the baselines (13\% and 27\% of lesion-free test images with any foreground for Dice+BCE with U-Net and DeepLabV3+, against 76\% and 98\% without them), but not for the directional losses (83--100\%). The same data show the one consistent advantage we observed: Dice+BCE and the boundary loss missed 7--10 lesions per run on the BUSI test set, the directional losses 0--2, so extent terms reduce empty predictions at the price of over-extension.
+\figureref{fig:forest} and Appendix~\ref{app:sup}, \tableref{tab:v3} summarise the second and third studies (full v2 tables in Appendix~\ref{app:v2}). On MMOTU the Feret-aligned loss was \emph{worse} than the frozen comparator: $+0.018$ [$+0.006$, $+0.031$] (U-Net) and $+0.020$ [$+0.008$, $+0.033$] (DeepLabV3+), with Dice lower by 1.7 and 1.9 points. On BUSI it was not distinguishable ($+0.020$ [$-0.020$, $+0.061$] and $+0.002$ [$-0.040$, $+0.047$]). Including lesion-free images greatly reduced spurious foreground for the baselines (13\% and 27\% of lesion-free test images with any foreground for Dice+BCE with U-Net and DeepLabV3+, against 76\% and 98\% without them), but not for the directional losses (83--100\%). The same data show the one consistent advantage we observed: Dice+BCE and the boundary loss missed 7--10 lesions per run on the BUSI test set, the directional losses 0--2, so extent terms reduce empty predictions at the price of over-extension.
 
 The negative-aware v3 repaired the false-positive behaviour (20\% and 24\% of lesion-free images with foreground) but also lost the advantage in missed lesions (10 and 7 per run, as for the baselines). Against the frozen comparators it was $+0.066$ [$+0.032$, $+0.103$] (U-Net, bounding-box comparator) and $+0.019$ [$-0.003$, $+0.042$] (DeepLabV3+, Dice+BCE) in mean relative error, and against the penalty-only control it was not distinguishable ($-0.011$ [$-0.046$, $+0.025$] and $-0.005$ [$-0.037$, $+0.025$]); the penalty alone made Dice+BCE worse on the U-Net ($+0.078$ [$+0.034$, $+0.123$] against the bounding-box comparator). Any benefit of v3 over Dice+BCE is therefore not attributable to the extent term.
 
@@ -148,36 +186,8 @@ The negative-aware v3 repaired the false-positive behaviour (20\% and 24\% of le
   {\includegraphics[width=0.78\linewidth]{figures/forest.pdf}}
 \end{figure}
 
-\begin{table}[htbp]
-\floatconts
-  {tab:v3}
-  {\caption{Third study (post hoc), BUSI test, lesion-free images in training. Columns as in \tableref{tab:main}; FP: percentage of the 30 lesion-free test images with any predicted foreground; Area: mean foreground area fraction (\%) on those images. The penalty-only control is Dice+BCE with the same negative penalty.}}
-  {\scriptsize\setlength{\tabcolsep}{3pt}\begin{tabular}{llllllllllll}
-  \toprule
-  Model & Loss & Rel.\ err. & Median & $\ge$20 & Bias & Dice & BF1 & Missed & FP & Area\\
-  \midrule
-  U-Net & Dice+BCE & 0.251 & 0.086 & 29.3 & -9.4 & 72.7 & 30.2 & 10 & 13 & 0.5 \\
-U-Net & + Feret-aligned (v2) & 0.236 & 0.119 & 29.3 & 6.0 & 73.2 & 23.6 & 0 & 100 & 2.8 \\
-U-Net & Dice+BCE + neg.\ penalty & 0.294 & 0.122 & 36.1 & -8.7 & 70.9 & 28.3 & 15 & 18 & 1.4 \\
-U-Net & + Feret-aligned + neg.\ (v3) & 0.283 & 0.122 & 35.3 & -3.1 & 70.5 & 22.6 & 10 & 20 & 0.4 \\
-\midrule
-DeepLabV3+ & Dice+BCE & 0.247 & 0.082 & 28.6 & -6.3 & 74.0 & 28.2 & 8 & 27 & 0.4 \\
-DeepLabV3+ & + Feret-aligned (v2) & 0.249 & 0.119 & 34.6 & 5.8 & 72.4 & 18.6 & 2 & 83 & 1.3 \\
-DeepLabV3+ & Dice+BCE + neg.\ penalty & 0.272 & 0.092 & 30.8 & -5.7 & 72.0 & 25.4 & 9 & 13 & 0.5 \\
-DeepLabV3+ & + Feret-aligned + neg.\ (v3) & 0.267 & 0.103 & 30.8 & -4.8 & 71.3 & 19.3 & 7 & 24 & 0.6 \\
-  \bottomrule
-  \end{tabular}}
-\end{table}
-
 \paragraph{Qualitative examples.}
-\figureref{fig:qual} shows representative cases from the test sets. The extent losses mostly change the \emph{extent} of the predicted region rather than its location; the characteristic failure is an extended or fragmented prediction on ambiguous echogenic regions, where the largest-component rule decides the measurement.
-
-\begin{figure}[htbp]
-\floatconts
-  {fig:qual}
-  {\caption{Test cases (U-Net, seed 0, a re-run of the first-study configuration; green: reference mask, dashed pink: Dice+BCE, orange: directional loss, both after the component rule; text: relative diameter error). Per dataset: a typical case, the case with the largest benefit of the directional loss and the case with the largest harm. Cases were selected by their error difference, not at random.}}
-  {\includegraphics[width=\linewidth]{figures/qualitative.pdf}}
-\end{figure}
+Appendix~\ref{app:sup}, \figureref{fig:qual} shows representative cases from the test sets. The extent losses mostly change the \emph{extent} of the predicted region rather than its location; the characteristic failure is an extended or fragmented prediction on ambiguous echogenic regions, where the largest-component rule decides the measurement.
 
 \paragraph{Direction count.}
 In a single-seed ablation, development error was lowest at $K=16$ on both datasets, consistent with the default, but test error was not monotone in $K$ (Appendix~\ref{app:K}). With one seed and differences of this size, we do not interpret the ablation as evidence for a preferred $K$.
@@ -208,6 +218,44 @@ An AI assistant (Claude, Anthropic) was used to write and run analysis scripts, 
 \appendix
 \section{Reproducibility and hyperparameters}\label{app:repro}
 Code, grouped split manifests, annotation issue log, frozen hyperparameters and per-case results (one row per image, seed, model and loss) are released at the repository given in the Data and Code Availability statement. Hyperparameters selected on the development split (single seed, U-Net): weight $\lambda$ of the directional loss 1.0 (MMOTU) and 4.0 (BUSI); boundary weight 2.0 and 0.5; bounding-box weight 4.0 and 4.0. With lesion-free images in training (second study) the BUSI weights were 4.0 (directional), 4.0 (Feret-aligned), 0.5 (boundary) and 1.0 (bounding box), and 4.0 for the Feret-aligned loss on MMOTU. In the third study $\lambda=4.0$ was kept from v2 and $\lambda_n\in\{0.5,2\}$ was tuned on development data for both v3 and the penalty-only control, 0.5 being selected for both. Training took 2--7 minutes per run on a single cloud GPU (L4, T4 or A10G).
+
+\section{Proofs and numerical checks}\label{app:proofs}
+Throughout, $t_k(x)=u_k^\top x$ with $x\in[-1,1]^2$, so $|t_k|\le\sqrt2$ and the range of $t_k$ over the grid is at most $2\sqrt2<3$.
+
+\begin{proof}[Proof of Proposition~\ref{prop:support}]
+Let $h=\max_{x\in S}t_k(x)$, $l=\min_{x\in S}t_k(x)$ and $T=\max_xt_k(x)$. Because $M(x)=1$ on $S$ and $M(x)=0$ elsewhere, the weights are $a_x=1$ on $S$ and $a_x=e^{-\beta}$ off $S$. \emph{Lower bound:} the sum in $s_k^{+}$ contains the term $e^{h/\tau}$, so $s_k^{+}\ge h$; likewise $-s_k^{-}=\tau\log\sum_xa_xe^{-t_k(x)/\tau}\ge-l$. Hence $w_k(M)\ge h-l=W_k(S)$. \emph{Upper bound:} $\sum_xa_xe^{t_k(x)/\tau}\le ne^{h/\tau}+(N-n)e^{-\beta}e^{T/\tau}=ne^{h/\tau}(1+r)$ with $r=\frac{N-n}{n}e^{-\beta+(T-h)/\tau}$. Since $T-h\le2\sqrt2$ and $\beta=3/\tau$, $r\le\frac{N}{n}e^{-(3-2\sqrt2)/\tau}=\epsilon_n$, and $\log(1+r)\le r$. Therefore $s_k^{+}\le h+\tau\log n+\tau\epsilon_n$. The same argument for $-s_k^{-}$ gives the bound on the other side, and adding the two yields the claim.
+\end{proof}
+
+\emph{Numerical check.} On 200 random ellipses on a $128\times128$ grid ($\tau=0.02$, $K=16$) the soft width exceeded the exact width in every direction (smallest margin $+0.062$) and never exceeded the upper bound (largest slack $-0.082$). For a lesion covering 1\% of the image, $\epsilon_n=100\,e^{-8.6}\approx0.018$ and the bound is dominated by $2\tau\log n$, which is the same in $P$ and $M$ when the prediction is sharp; this common-mode bias is what the difference in \eqref{eq:ext} removes.
+
+\begin{proof}[Proof of Proposition~\ref{prop:translation}]
+Let $P'(x)=P(x-\delta)$. Substituting $x\to x+\delta$ in the sums and using $t_k(x+\delta)=t_k(x)+u_k^\top\delta$ gives $s_k^{\pm}(P')=s_k^{\pm}(P)+u_k^\top\delta$, since the weights $e^{\beta(P'(x)-1)}$ move with the map. The common shift cancels in $w_k=s_k^{+}-s_k^{-}$. On a finite grid the identity is exact up to the background pixels that enter or leave at the border, whose weight is $e^{-\beta}$ and which are controlled as in Proposition~\ref{prop:support}.
+\end{proof}
+\emph{Numerical check.} Shifting masks by $(3,5)$ pixels changed the widths by at most $2.4\times10^{-7}$ (float32 precision).
+
+\begin{proof}[Proof of Proposition~\ref{prop:K}]
+$W_k(S)=\max_{x,y\in S}u_k^\top(x-y)\le\max\|x-y\|=D(S)$ for every $k$, hence $D_K\le D$. Let $(x^\ast,y^\ast)$ be a farthest pair, with $x^\ast-y^\ast=D(\cos\theta,\sin\theta)$ and $\theta$ taken modulo $\pi$ (a pair and its reverse give the same width). The directions are spaced by $\pi/K$, so some $\phi_k$ satisfies $|\phi_k-\theta|\le\pi/2K$, and $W_k(S)\ge u_k^\top(x^\ast-y^\ast)=D\cos(\phi_k-\theta)\ge D\cos\frac{\pi}{2K}$.
+\end{proof}
+\emph{Numerical check.} The smallest observed ratio $D_K/D$ over 200 random ellipses was $0.9953$ against the bound $0.9952$ (the bound is nearly attained).
+
+\begin{proof}[Proof of Proposition~\ref{prop:dilution}]
+(i) By Proposition~\ref{prop:K}, $D_K\le D\le D_K/c_K$ for both sets. Then $D(\hat S)-D(S)\le D_K(\hat S)/c_K-D_K(S)=(D_K(\hat S)-D_K(S))+(c_K^{-1}-1)D_K(\hat S)$ and symmetrically for the other sign; $|\max_ka_k-\max_kb_k|\le\max_k|a_k-b_k|$ bounds $|D_K(\hat S)-D_K(S)|$, and $D_K\le D$. (ii) $\rho$ is even, nonnegative and increasing in $|d|$, so $\rho(d_k)\le\sum_j\rho(d_j)=K\mathcal{L}_{\mathrm{ext}}\le K\varepsilon$. Inverting the Huber function, $\rho(d)=e$ gives $|d|=\sqrt{2e}$ if $e\le\delta^2/2$ and $|d|=e/\delta+\delta/2$ otherwise. (iii) If $d_j=0$ for $j\ne k$, then $\mathcal{L}_{\mathrm{ext}}=\rho(d_k)/K$.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:smax}]
+$e^{\max v/\tau_k}\le\sum_ke^{v_k/\tau_k}\le Ke^{\max v/\tau_k}$ gives the sandwich; applying it to $v=w(P)/m$ and $v=w(M)/m$ and subtracting bounds the difference of soft maxima by the difference of maxima plus at most $\tau_k\log K$ in either direction. The partial derivative of $\smax_{\tau_k}$ with respect to $v_k$ is $e^{v_k/\tau_k}/\sum_je^{v_j/\tau_k}$.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:uniform}]
+If $P\equiv c$ the weights equal $a=e^{-\beta(1-c)}$ at every pixel, so $s_k^{+}=\tau\log a+\tau\log\sum_xe^{t_k/\tau}$ and $-s_k^{-}=\tau\log a+\tau\log\sum_xe^{-t_k/\tau}$. Adding gives $G_k+2\tau\log a=G_k-2\tau\beta(1-c)$, and $2\tau\beta=6$.
+\end{proof}
+\emph{Numerical check.} The formula matched the implementation to $2.4\times10^{-7}$ for $c\in\{0,0.01,0.3\}$; on the grid $\bar G=2.62$, so $\bar w=-3.38$ for $c=0$.
+
+\begin{proof}[Proof of Proposition~\ref{prop:dice}]
+$|M|=\pi r^2$ and $|N|=\ell$ with $N$ disjoint from $M$, so $\mathrm{Dice}(\hat S,M)=2|M|/(2|M|+|N|)=2\pi r^2/(2\pi r^2+\ell)$. Setting $\ell=2re$ gives $(1+e/(\pi r))^{-1}$, and $(1+z)^{-1}\ge1-z$. The needle extends the diameter from $2r$ to $2r+\ell$, so $|D(\hat S)-D(M)|/D(M)=\ell/2r=e$.
+\end{proof}
+\emph{Numerical check.} $r=40$, $\ell=20$: Dice $=0.9980$, relative error $=0.250$.
+
 
 \section{Data audit}\label{app:audit}
 BUSI: 780 images, of which 133 are lesion-free, 34 have multi-component masks, 22 contain tiny components, 17 have several released masks (merged by union) and 2 are exact duplicates. MMOTU: 1469 images, of which 19 have multi-component masks. All are kept and logged; none was edited.
@@ -287,6 +335,41 @@ DeepLabV3+ & + Feret-aligned + neg.\ (v3) & 24 & 0.6 & 7.3 & 0.267 & 1.274 \\
 MMOTU & DeepLabV3+ & Dice+BCE & +0.006 [-0.004, +0.016] & 51 & +0.0 [-0.5, +0.6] \\
 BUSI & U-Net & + Boundary & -0.008 [-0.049, +0.033] & 49 & +0.4 [-1.7, +2.7] \\
 BUSI & DeepLabV3+ & Dice+BCE & +0.001 [-0.021, +0.022] & 47 & +0.2 [-2.1, +2.6] \\
+  \bottomrule
+  \end{tabular}}
+\end{table}
+
+\begin{figure}[htbp]
+\floatconts
+  {fig:qual}
+  {\caption{Test cases (U-Net, seed 0, a re-run of the first-study configuration; green: reference mask, dashed pink: Dice+BCE, orange: directional loss, both after the component rule; text: relative diameter error). Per dataset: a typical case, the case with the largest benefit of the directional loss and the case with the largest harm. Cases were selected by their error difference, not at random.}}
+  {\includegraphics[width=\linewidth]{figures/qualitative.pdf}}
+\end{figure}
+
+\begin{figure}[htbp]
+\floatconts
+  {fig:overlap}
+  {\caption{Overlap versus measurement error on test lesions (U-Net, seed-averaged, error clipped at 1). The dotted line marks 20\% error.}}
+  {\includegraphics[width=0.78\linewidth]{figures/overlap_vs_measurement.pdf}}
+\end{figure}
+
+\begin{table}[htbp]
+\floatconts
+  {tab:v3}
+  {\caption{Third study (post hoc), BUSI test, lesion-free images in training. Columns as in \tableref{tab:main}; FP: percentage of the 30 lesion-free test images with any predicted foreground; Area: mean foreground area fraction (\%) on those images. The penalty-only control is Dice+BCE with the same negative penalty.}}
+  {\scriptsize\setlength{\tabcolsep}{3pt}\begin{tabular}{llllllllllll}
+  \toprule
+  Model & Loss & Rel.\ err. & Median & $\ge$20 & Bias & Dice & BF1 & Missed & FP & Area\\
+  \midrule
+  U-Net & Dice+BCE & 0.251 & 0.086 & 29.3 & -9.4 & 72.7 & 30.2 & 10 & 13 & 0.5 \\
+U-Net & + Feret-aligned (v2) & 0.236 & 0.119 & 29.3 & 6.0 & 73.2 & 23.6 & 0 & 100 & 2.8 \\
+U-Net & Dice+BCE + neg.\ penalty & 0.294 & 0.122 & 36.1 & -8.7 & 70.9 & 28.3 & 15 & 18 & 1.4 \\
+U-Net & + Feret-aligned + neg.\ (v3) & 0.283 & 0.122 & 35.3 & -3.1 & 70.5 & 22.6 & 10 & 20 & 0.4 \\
+\midrule
+DeepLabV3+ & Dice+BCE & 0.247 & 0.082 & 28.6 & -6.3 & 74.0 & 28.2 & 8 & 27 & 0.4 \\
+DeepLabV3+ & + Feret-aligned (v2) & 0.249 & 0.119 & 34.6 & 5.8 & 72.4 & 18.6 & 2 & 83 & 1.3 \\
+DeepLabV3+ & Dice+BCE + neg.\ penalty & 0.272 & 0.092 & 30.8 & -5.7 & 72.0 & 25.4 & 9 & 13 & 0.5 \\
+DeepLabV3+ & + Feret-aligned + neg.\ (v3) & 0.267 & 0.103 & 30.8 & -4.8 & 71.3 & 19.3 & 7 & 24 & 0.6 \\
   \bottomrule
   \end{tabular}}
 \end{table}

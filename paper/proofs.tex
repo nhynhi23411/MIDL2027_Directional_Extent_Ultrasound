@@ -1,0 +1,37 @@
+\section{Proofs and numerical checks}\label{app:proofs}
+Throughout, $t_k(x)=u_k^\top x$ with $x\in[-1,1]^2$, so $|t_k|\le\sqrt2$ and the range of $t_k$ over the grid is at most $2\sqrt2<3$.
+
+\begin{proof}[Proof of Proposition~\ref{prop:support}]
+Let $h=\max_{x\in S}t_k(x)$, $l=\min_{x\in S}t_k(x)$ and $T=\max_xt_k(x)$. Because $M(x)=1$ on $S$ and $M(x)=0$ elsewhere, the weights are $a_x=1$ on $S$ and $a_x=e^{-\beta}$ off $S$. \emph{Lower bound:} the sum in $s_k^{+}$ contains the term $e^{h/\tau}$, so $s_k^{+}\ge h$; likewise $-s_k^{-}=\tau\log\sum_xa_xe^{-t_k(x)/\tau}\ge-l$. Hence $w_k(M)\ge h-l=W_k(S)$. \emph{Upper bound:} $\sum_xa_xe^{t_k(x)/\tau}\le ne^{h/\tau}+(N-n)e^{-\beta}e^{T/\tau}=ne^{h/\tau}(1+r)$ with $r=\frac{N-n}{n}e^{-\beta+(T-h)/\tau}$. Since $T-h\le2\sqrt2$ and $\beta=3/\tau$, $r\le\frac{N}{n}e^{-(3-2\sqrt2)/\tau}=\epsilon_n$, and $\log(1+r)\le r$. Therefore $s_k^{+}\le h+\tau\log n+\tau\epsilon_n$. The same argument for $-s_k^{-}$ gives the bound on the other side, and adding the two yields the claim.
+\end{proof}
+
+\emph{Numerical check.} On 200 random ellipses on a $128\times128$ grid ($\tau=0.02$, $K=16$) the soft width exceeded the exact width in every direction (smallest margin $+0.062$) and never exceeded the upper bound (largest slack $-0.082$). For a lesion covering 1\% of the image, $\epsilon_n=100\,e^{-8.6}\approx0.018$ and the bound is dominated by $2\tau\log n$, which is the same in $P$ and $M$ when the prediction is sharp; this common-mode bias is what the difference in \eqref{eq:ext} removes.
+
+\begin{proof}[Proof of Proposition~\ref{prop:translation}]
+Let $P'(x)=P(x-\delta)$. Substituting $x\to x+\delta$ in the sums and using $t_k(x+\delta)=t_k(x)+u_k^\top\delta$ gives $s_k^{\pm}(P')=s_k^{\pm}(P)+u_k^\top\delta$, since the weights $e^{\beta(P'(x)-1)}$ move with the map. The common shift cancels in $w_k=s_k^{+}-s_k^{-}$. On a finite grid the identity is exact up to the background pixels that enter or leave at the border, whose weight is $e^{-\beta}$ and which are controlled as in Proposition~\ref{prop:support}.
+\end{proof}
+\emph{Numerical check.} Shifting masks by $(3,5)$ pixels changed the widths by at most $2.4\times10^{-7}$ (float32 precision).
+
+\begin{proof}[Proof of Proposition~\ref{prop:K}]
+$W_k(S)=\max_{x,y\in S}u_k^\top(x-y)\le\max\|x-y\|=D(S)$ for every $k$, hence $D_K\le D$. Let $(x^\ast,y^\ast)$ be a farthest pair, with $x^\ast-y^\ast=D(\cos\theta,\sin\theta)$ and $\theta$ taken modulo $\pi$ (a pair and its reverse give the same width). The directions are spaced by $\pi/K$, so some $\phi_k$ satisfies $|\phi_k-\theta|\le\pi/2K$, and $W_k(S)\ge u_k^\top(x^\ast-y^\ast)=D\cos(\phi_k-\theta)\ge D\cos\frac{\pi}{2K}$.
+\end{proof}
+\emph{Numerical check.} The smallest observed ratio $D_K/D$ over 200 random ellipses was $0.9953$ against the bound $0.9952$ (the bound is nearly attained).
+
+\begin{proof}[Proof of Proposition~\ref{prop:dilution}]
+(i) By Proposition~\ref{prop:K}, $D_K\le D\le D_K/c_K$ for both sets. Then $D(\hat S)-D(S)\le D_K(\hat S)/c_K-D_K(S)=(D_K(\hat S)-D_K(S))+(c_K^{-1}-1)D_K(\hat S)$ and symmetrically for the other sign; $|\max_ka_k-\max_kb_k|\le\max_k|a_k-b_k|$ bounds $|D_K(\hat S)-D_K(S)|$, and $D_K\le D$. (ii) $\rho$ is even, nonnegative and increasing in $|d|$, so $\rho(d_k)\le\sum_j\rho(d_j)=K\mathcal{L}_{\mathrm{ext}}\le K\varepsilon$. Inverting the Huber function, $\rho(d)=e$ gives $|d|=\sqrt{2e}$ if $e\le\delta^2/2$ and $|d|=e/\delta+\delta/2$ otherwise. (iii) If $d_j=0$ for $j\ne k$, then $\mathcal{L}_{\mathrm{ext}}=\rho(d_k)/K$.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:smax}]
+$e^{\max v/\tau_k}\le\sum_ke^{v_k/\tau_k}\le Ke^{\max v/\tau_k}$ gives the sandwich; applying it to $v=w(P)/m$ and $v=w(M)/m$ and subtracting bounds the difference of soft maxima by the difference of maxima plus at most $\tau_k\log K$ in either direction. The partial derivative of $\smax_{\tau_k}$ with respect to $v_k$ is $e^{v_k/\tau_k}/\sum_je^{v_j/\tau_k}$.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:uniform}]
+If $P\equiv c$ the weights equal $a=e^{-\beta(1-c)}$ at every pixel, so $s_k^{+}=\tau\log a+\tau\log\sum_xe^{t_k/\tau}$ and $-s_k^{-}=\tau\log a+\tau\log\sum_xe^{-t_k/\tau}$. Adding gives $G_k+2\tau\log a=G_k-2\tau\beta(1-c)$, and $2\tau\beta=6$.
+\end{proof}
+\emph{Numerical check.} The formula matched the implementation to $2.4\times10^{-7}$ for $c\in\{0,0.01,0.3\}$; on the grid $\bar G=2.62$, so $\bar w=-3.38$ for $c=0$.
+
+\begin{proof}[Proof of Proposition~\ref{prop:dice}]
+$|M|=\pi r^2$ and $|N|=\ell$ with $N$ disjoint from $M$, so $\mathrm{Dice}(\hat S,M)=2|M|/(2|M|+|N|)=2\pi r^2/(2\pi r^2+\ell)$. Setting $\ell=2re$ gives $(1+e/(\pi r))^{-1}$, and $(1+z)^{-1}\ge1-z$. The needle extends the diameter from $2r$ to $2r+\ell$, so $|D(\hat S)-D(M)|/D(M)=\ell/2r=e$.
+\end{proof}
+\emph{Numerical check.} $r=40$, $\ell=20$: Dice $=0.9980$, relative error $=0.250$.
+

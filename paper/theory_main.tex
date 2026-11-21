@@ -1,0 +1,36 @@
+\subsection{Properties of the loss}\label{sec:theory}
+We state what the loss does and does not guarantee; proofs and numerical checks are in Appendix~\ref{app:proofs}. For a pixel set $S$ with $n=|S|$ and $N=HW$, let $W_k(S)=\max_{x\in S}t_k(x)-\min_{x\in S}t_k(x)$ be the exact projected width, $D(S)=\max_{x,y\in S}\|x-y\|$ the maximum Feret diameter and $D_K(S)=\max_kW_k(S)$.
+
+\begin{proposition}[Soft supports]\label{prop:support}
+For a binary mask $M$ with support $S$ and $\beta=3/\tau$: $\;W_k(S)\le w_k(M)\le W_k(S)+2\tau\big[\log n+\tfrac{N}{n}e^{-(3-2\sqrt2)/\tau}\big]$.
+\end{proposition}
+This is why $\beta=3/\tau$: $t_k$ ranges over at most $2\sqrt2<3$, so background weight $e^{-\beta}$ cannot compete with the lesion.
+
+\begin{proposition}[Extent, not position]\label{prop:translation}
+If $P'(x)=P(x-\delta)$ then $w_k(P')=w_k(P)$ for all $k$, so $\mathcal{L}_{\mathrm{ext}}$ is unchanged (shifts of $s_k^{\pm}$ cancel).
+\end{proposition}
+
+\begin{proposition}[Direction discretisation]\label{prop:K}
+With $c_K=\cos\frac{\pi}{2K}$, every pixel set satisfies $\;c_KD(S)\le D_K(S)\le D(S)$.
+\end{proposition}
+For $K=4,8,16,32$ the factor is $0.924,0.981,0.995,0.999$, so $K=16$ underestimates the Feret diameter by at most $0.48\%$.
+
+\begin{proposition}[Widths to diameter; dilution]\label{prop:dilution}
+Let $d_k=(w_k(P)-w_k(M))/\bar w_k$. (i) $|D(\hat S)-D(S)|\le\max_k|W_k(\hat S)-W_k(S)|+(c_K^{-1}-1)\max\{D(\hat S),D(S)\}$. (ii) If $\mathcal{L}_{\mathrm{ext}}\le\varepsilon$ then $\max_k|d_k|\le g(K\varepsilon)$, with $g(e)=\sqrt{2e}$ for $e\le\delta^2/2$ and $e/\delta+\delta/2$ otherwise. (iii) The factor $K$ is tight: an error $d$ in one direction gives $\mathcal{L}_{\mathrm{ext}}=\rho(d)/K$.
+\end{proposition}
+A $20\%$ width error in a single direction costs only $\rho(0.2)/16=0.00125$, so the mean over directions dilutes the signal the maximum Feret diameter reads; this is the first hypothesis behind v2.
+
+\begin{proposition}[Soft maximum]\label{prop:smax}
+$\max v\le\smax_{\tau_k}(v)\le\max v+\tau_k\log K$, so the second term of \eqref{eq:v2} is within $\tau_k\log K=0.14$ of the normalised error of $D_K$, and its gradient with respect to $w_k$ is the softmax weight $\pi_k\propto e^{w_k/(m\tau_k)}$ (longest directions first) instead of the uniform $1/K$ of \eqref{eq:ext}.
+\end{proposition}
+
+\begin{proposition}[Uniform output]\label{prop:uniform}
+If $P\equiv c$ then $w_k(P)=G_k-6(1-c)$, with $G_k$ the soft width of the whole grid ($\bar G=2.6$).
+\end{proposition}
+An empty output thus has width $\approx-3.4$, a large negative error that pushes towards foreground on lesion-positive images, whereas lesion-free images are skipped: pressure upward without pressure downward, which predicts the spurious foreground observed and motivates v3.
+
+\begin{proposition}[Overlap does not control diameter]\label{prop:dice}
+For a disk $M$ of radius $r$ and a prediction $M\cup N$ with a radial needle $N$ of area $\ell$: $\;\mathrm{Dice}=(1+e/\pi r)^{-1}\ge1-e/\pi r$ while the relative diameter error is $e=\ell/2r$.
+\end{proposition}
+With $r=40$ px and $\ell=20$ px, Dice is $0.998$ and the error $0.25$; the needle is connected, so the largest-component rule cannot remove it. This is the mechanism behind the loose coupling in Section~\ref{sec:results}.
+
