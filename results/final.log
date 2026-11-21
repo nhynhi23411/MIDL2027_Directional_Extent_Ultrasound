@@ -1,0 +1,482 @@
+✓ Initialized. View run at 
+https://modal.com/apps/buiquangphuong941/main/ap-Zv3hDe55n0vTMrY5v4oWWI
+✓ Created objects.
+├── 🔨 Created mount E:\MIDL_2\code\modal_app.py
+├── 🔨 Created mount E:\MIDL_2\code\metrics.py
+├── 🔨 Created mount E:\MIDL_2\code\losses.py
+└── 🔨 Created function run.
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+final_mmotu_unet_dice_bce_l0_K16_s0 ep 0 loss 1.5553 ep_secs 4.2
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+final_mmotu_unet_dice_bce_l0_K16_s1 ep 0 loss 1.3236 ep_secs 5.2
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+final_mmotu_unet_dice_bce_l0_K16_s2 ep 0 loss 1.2635 ep_secs 4.2
+final_mmotu_unet_dice_bce_l0_K16_s0 ep 10 loss 0.3341 ep_secs 2.9
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+final_mmotu_unet_boundary_l2.0_K16_s0 ep 0 loss 1.785 ep_secs 10.8
+final_mmotu_unet_dice_bce_l0_K16_s1 ep 10 loss 0.3395 ep_secs 4.1
+final_mmotu_unet_dice_bce_l0_K16_s2 ep 10 loss 0.1994 ep_secs 2.8
+final_mmotu_unet_dice_bce_l0_K16_s0 ep 20 loss 0.251 ep_secs 2.9
+final_mmotu_unet_dice_bce_l0_K16_s2 ep 20 loss 0.172 ep_secs 2.8
+final_mmotu_unet_dice_bce_l0_K16_s1 ep 20 loss 0.2394 ep_secs 4.1
+final_mmotu_unet_dice_bce_l0_K16_s0 ep 30 loss 0.23 ep_secs 2.9
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+final_mmotu_unet_dice_bce_l0_K16_s2 ep 30 loss 0.2135 ep_secs 2.9
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+final_mmotu_unet_dice_bce_l0_K16_s0 ep 40 loss 0.1362 ep_secs 2.9
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/root/modal_app.py:36: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  loss = crit(lg.float(), y); opt.zero_grad(set_to_none=True); scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sch.step()
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/root/modal_app.py:36: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  loss = crit(lg.float(), y); opt.zero_grad(set_to_none=True); scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sch.step()
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+final_mmotu_unet_boundary_l2.0_K16_s1 ep 0 loss 1.476 ep_secs 12.0
+/root/modal_app.py:36: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  loss = crit(lg.float(), y); opt.zero_grad(set_to_none=True); scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sch.step()
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+final_mmotu_unet_bbox_l4.0_K2_s2 ep 0 loss 1.6233 ep_secs 4.4
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+final_mmotu_unet_bbox_l4.0_K2_s0 ep 0 loss 1.946 ep_secs 7.6
+final_mmotu_unet_dice_bce_l0_K16_s1 ep 30 loss 0.1499 ep_secs 4.0
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+final_mmotu_unet_bbox_l4.0_K2_s1 ep 0 loss 1.658 ep_secs 8.3
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+final_mmotu_unet_directional_l1.0_K16_s0 ep 0 loss 1.6583 ep_secs 8.0
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+final_mmotu_unet_boundary_l2.0_K16_s2 ep 0 loss 1.4316 ep_secs 13.0
+final_mmotu_unet_boundary_l2.0_K16_s0 ep 10 loss 0.3425 ep_secs 9.4
+final_mmotu_unet_dice_bce_l0_K16_s2 ep 40 loss 0.2207 ep_secs 2.8
+final_mmotu_unet_dice_bce_l0_K16_s0 ep 50 loss 0.1212 ep_secs 2.9
+final_mmotu_unet_bbox_l4.0_K2_s2 ep 10 loss 0.3389 ep_secs 2.9
+final_mmotu_unet_dice_bce_l0_K16_s1 ep 40 loss 0.1334 ep_secs 4.1
+final_mmotu_unet_dice_bce_l0_K16_s2 ep 50 loss 0.1031 ep_secs 2.8
+final_mmotu_unet_dice_bce_l0_K16_s0 ep 59 loss 0.104 ep_secs 2.9
+final_mmotu_unet_bbox_l4.0_K2_s2 ep 20 loss 0.3479 ep_secs 2.9
+final_mmotu_unet_bbox_l4.0_K2_s0 ep 10 loss 0.6123 ep_secs 6.3
+final_mmotu_unet_dice_bce_l0_K16_s2 ep 59 loss 0.1157 ep_secs 2.8
+final_mmotu_unet_directional_l1.0_K16_s0 ep 10 loss 0.3089 ep_secs 6.9
+final_mmotu_unet_bbox_l4.0_K2_s1 ep 10 loss 0.6179 ep_secs 7.4
+final_mmotu_unet_dice_bce_l0_K16_s1 ep 50 loss 0.1172 ep_secs 4.1
+final_mmotu_unet_bbox_l4.0_K2_s2 ep 30 loss 0.2061 ep_secs 2.9
+final_mmotu_unet_boundary_l2.0_K16_s0 ep 20 loss 0.2928 ep_secs 9.4
+final_mmotu_unet_boundary_l2.0_K16_s1 ep 10 loss 0.3612 ep_secs 10.7
+DONE final_mmotu_unet_dice_bce_l0_K16_s0 237
+final_mmotu_unet_bbox_l4.0_K2_s2 ep 40 loss 0.2438 ep_secs 2.9
+final_mmotu_unet_directional_l1.0_K16_s1 ep 0 loss 1.4559 ep_secs 3.7
+final_mmotu_unet_dice_bce_l0_K16_s1 ep 59 loss 0.1015 ep_secs 4.1
+final_mmotu_unet_boundary_l2.0_K16_s2 ep 10 loss 0.209 ep_secs 11.6
+final_mmotu_unet_bbox_l4.0_K2_s0 ep 20 loss 0.2499 ep_secs 6.3
+final_mmotu_unet_directional_l1.0_K16_s2 ep 0 loss 1.3802 ep_secs 3.6
+final_mmotu_unet_directional_l1.0_K16_s0 ep 20 loss 0.321 ep_secs 6.9
+final_mmotu_unet_bbox_l4.0_K2_s2 ep 50 loss 0.1449 ep_secs 2.9
+final_mmotu_unet_directional_l1.0_K16_s1 final_mmotu_unet_bbox_l4.0_K2_s1 epep 10 loss 0.3704 ep_secs 3.2
+ 20 loss 0.3384 ep_secs 7.3
+final_mmotu_unet_bbox_l4.0_K2_s2 ep 59 loss 0.2001 ep_secs 2.9
+final_mmotu_unet_directional_l1.0_K16_s2 ep 10 loss 0.2674 ep_secs 3.2
+final_mmotu_unet_directional_l1.0_K16_s1 ep 20 loss 0.2474 ep_secs 3.2
+final_mmotu_unet_bbox_l4.0_K2_s0 ep 30 loss 0.2302 ep_secs 6.3
+final_mmotu_unet_boundary_l2.0_K16_s0 ep 30 loss 0.202 ep_secs 9.4
+final_mmotu_unet_directional_l1.0_K16_s2 ep 20 loss 0.2203 ep_secs 3.2
+final_mmotu_unet_directional_l1.0_K16_s0 ep 30 loss 0.1965 final_mmotu_unet_directional_l1.0_K16_s1 ep 30 loss ep_secs 6.9
+0.1594 ep_secs 3.2
+final_mmotu_unet_boundary_l2.0_K16_s1 ep 20 loss 0.2127 ep_secs 10.9
+DONE final_mmotu_unet_dice_bce_l0_K16_s1 340
+DONE final_mmotu_unet_dice_bce_l0_K16_s2 235
+final_mmotu_unet_bbox_l4.0_K2_s1 ep 30 loss 0.2317 ep_secs 7.3
+final_mmotu_dlv3p_dice_bce_l0_K16_s0 ep 0 loss 1.1926 ep_secs 7.4
+final_mmotu_unet_directional_l1.0_K16_s2 ep 30 loss 0.1796 ep_secs 3.2
+final_mmotu_unet_boundary_l2.0_K16_s2 ep 20 loss 0.1818 ep_secs 11.5
+final_mmotu_dlv3p_dice_bce_l0_K16_s1 ep 0 loss 1.2988 ep_secs 4.8
+final_mmotu_unet_directional_l1.0_K16_s1 ep 40 loss 0.1977 ep_secs 3.2
+final_mmotu_unet_bbox_l4.0_K2_s0 ep 40 loss 0.1581 ep_secs 6.3
+final_mmotu_dlv3p_dice_bce_l0_K16_s0 ep 10 loss 0.2173 ep_secs 3.2
+final_mmotu_dlv3p_dice_bce_l0_K16_s1 ep 10 loss 0.401 ep_secs 2.3
+final_mmotu_unet_directional_l1.0_K16_s2 ep 40 loss 0.2048 ep_secs 3.2
+final_mmotu_unet_directional_l1.0_K16_s1 ep 50 loss 0.1208 ep_secs 3.2
+final_mmotu_unet_directional_l1.0_K16_s0 ep 40 loss 0.1259 ep_secs 6.9
+final_mmotu_dlv3p_dice_bce_l0_K16_s1 ep 20 loss 0.1782 ep_secs 2.3
+final_mmotu_dlv3p_dice_bce_l0_K16_s0 ep 20 loss 0.1899 ep_secs 3.2
+final_mmotu_unet_bbox_l4.0_K2_s1 ep 40 loss 0.2394 ep_secs 7.3
+final_mmotu_unet_boundary_l2.0_K16_s0 ep 40 loss 0.1267 ep_secs 9.5
+final_mmotu_unet_directional_l1.0_K16_s2 ep 50 loss 0.1087 ep_secs 3.2
+final_mmotu_unet_directional_l1.0_K16_s1 ep 59 loss 0.1134 ep_secs 3.3
+final_mmotu_dlv3p_dice_bce_l0_K16_s1 ep 30 loss 0.2015 ep_secs 2.3
+final_mmotu_unet_bbox_l4.0_K2_s0 ep 50 loss 0.1263 ep_secs 6.3
+final_mmotu_dlv3p_dice_bce_l0_K16_s0 ep 30 loss 0.1289 ep_secs 3.3
+final_mmotu_unet_boundary_l2.0_K16_s1 ep 30 loss 0.1627 ep_secs 10.9
+final_mmotu_unet_directional_l1.0_K16_s2 ep 59 loss 0.1321 ep_secs 3.2
+final_mmotu_dlv3p_dice_bce_l0_K16_s1 ep 40 loss 0.1618 ep_secs 2.3
+final_mmotu_unet_directional_l1.0_K16_s0 ep 50 loss 0.1447 ep_secs 6.9
+final_mmotu_dlv3p_dice_bce_l0_K16_s0 ep 40 loss 0.0819 ep_secs 3.2
+final_mmotu_dlv3p_dice_bce_l0_K16_s1 ep 50 lossfinal_mmotu_unet_boundary_l2.0_K16_s2 0.0781 ep_secs 2.3
+ ep 30 loss 0.1239 ep_secs 11.6
+final_mmotu_unet_bbox_l4.0_K2_s1 ep 50 loss 0.1561 ep_secs 7.3
+final_mmotu_dlv3p_dice_bce_l0_K16_s2 ep 0 loss 1.3004 ep_secs 4.8
+final_mmotu_unet_bbox_l4.0_K2_s0 ep 59 loss 0.126 ep_secs 6.3
+final_mmotu_dlv3p_dice_bce_l0_K16_s1 ep 59 loss 0.1098 ep_secs 2.3
+final_mmotu_dlv3p_dice_bce_l0_K16_s0 ep 50 loss 0.0937 ep_secs 3.2
+final_mmotu_unet_boundary_l2.0_K16_s0 ep 50 loss 0.1282 ep_secs 9.4
+final_mmotu_dlv3p_dice_bce_l0_K16_s2 ep 10 loss 0.3352 ep_secs 2.4
+final_mmotu_dlv3p_boundary_l2.0_K16_s0 ep 0 loss 1.2909 ep_secs 8.5
+final_mmotu_unet_directional_l1.0_K16_s0 ep 59 loss 0.1008 ep_secs 6.9
+final_mmotu_dlv3p_dice_bce_l0_K16_s0 ep 59 loss 0.0789 ep_secs 3.3
+final_mmotu_dlv3p_dice_bce_l0_K16_s2 ep 20 loss 0.1658 ep_secs 2.4
+final_mmotu_unet_boundary_l2.0_K16_s1 ep 40 loss 0.1886 ep_secs 10.8
+final_mmotu_unet_bbox_l4.0_K2_s1 ep 59 loss 0.1337 ep_secs 7.3
+final_mmotu_dlv3p_dice_bce_l0_K16_s2 ep 30 loss 0.1476 ep_secs 2.4
+final_mmotu_dlv3p_boundary_l2.0_K16_s1 ep 0 loss 1.4175 ep_secs 6.1
+final_mmotu_dlv3p_boundary_l2.0_K16_s0 ep 10 loss 0.2462 ep_secs 5.9
+final_mmotu_dlv3p_dice_bce_l0_K16_s2 ep 40 loss 0.1029 ep_secs 2.4
+final_mmotu_unet_boundary_l2.0_K16_s2 ep 40 loss 0.1871 ep_secs 11.5
+final_mmotu_unet_boundary_l2.0_K16_s0 ep 59 loss 0.0893 ep_secs 9.4
+final_mmotu_dlv3p_boundary_l2.0_K16_s2 ep 0 loss 1.4655 ep_secs 12.8
+final_mmotu_dlv3p_dice_bce_l0_K16_s2 ep 50 loss 0.1012 ep_secs 2.4
+/root/modal_app.py:36: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  loss = crit(lg.float(), y); opt.zero_grad(set_to_none=True); scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sch.step()
+final_mmotu_dlv3p_bbox_l4.0_K2_s0 ep 0 loss 1.7907 ep_secs 7.8
+final_mmotu_dlv3p_boundary_l2.0_K16_s1 ep 10 loss 0.3542 ep_secs 6.0
+/root/modal_app.py:36: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  loss = crit(lg.float(), y); opt.zero_grad(set_to_none=True); scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sch.step()
+final_mmotu_dlv3p_bbox_l4.0_K2_s1 ep 0 loss 1.7607 ep_secs 4.0
+final_mmotu_dlv3p_dice_bce_l0_K16_s2 ep 59 loss 0.0963 ep_secs 2.4
+final_mmotu_dlv3p_boundary_l2.0_K16_s0 ep 20 loss 0.1697 ep_secs 5.8
+final_mmotu_unet_boundary_l2.0_K16_s1 ep 50 loss 0.1011 ep_secs 11.0
+final_mmotu_dlv3p_bbox_l4.0_K2_s2 ep 0 loss 1.9388 ep_secs 9.1
+final_mmotu_dlv3p_bbox_l4.0_K2_s1 ep 10 loss 0.6632 ep_secs 3.3
+final_mmotu_dlv3p_bbox_l4.0_K2_s0 ep 10 loss 0.4296 ep_secs 5.0
+final_mmotu_dlv3p_boundary_l2.0_K16_s1 ep 20 loss 0.1242 ep_secs 6.0
+DONE final_mmotu_unet_boundary_l2.0_K16_s0 666
+final_mmotu_dlv3p_boundary_l2.0_K16_s0 ep 30 loss 0.1185 ep_secs 5.8
+final_mmotu_dlv3p_boundary_l2.0_K16_s2 ep 10 loss 0.3867 ep_secs 9.9
+final_mmotu_dlv3p_directional_l1.0_K16_s1 ep 0 loss 1.452 ep_secs 2.9
+final_mmotu_dlv3p_bbox_l4.0_K2_s1 ep 20 loss 0.2881 ep_secs 3.3
+final_mmotu_dlv3p_directional_l1.0_K16_s0 ep 0 loss 1.4285 ep_secs 8.2
+final_mmotu_unet_boundary_l2.0_K16_s2 ep 50 loss 0.091 ep_secs 11.6
+final_mmotu_dlv3p_bbox_l4.0_K2_s2 ep 10 loss 0.5475 ep_secs 5.7
+final_mmotu_dlv3p_bbox_l4.0_K2_s0 ep 20 loss 0.2402 ep_secs 5.0
+final_mmotu_dlv3p_directional_l1.0_K16_s1 ep 10 loss 0.4146 ep_secs 2.7
+final_mmotu_dlv3p_bbox_l4.0_K2_s1 ep 30 loss 0.2435 ep_secs 3.3
+final_mmotu_dlv3p_directional_l1.0_K16_s0 ep 10 loss 0.2965 ep_secs 3.7
+final_mmotu_dlv3p_boundary_l2.0_K16_s1 ep 30 loss 0.149 ep_secs 5.9
+final_mmotu_dlv3p_boundary_l2.0_K16_s0 ep 40 loss 0.0663 ep_secs 5.7
+final_mmotu_dlv3p_directional_l1.0_K16_s1 ep 20 loss 0.1958 ep_secs 2.8
+final_mmotu_unet_boundary_l2.0_K16_s1 ep 59 loss 0.0942 ep_secs 10.8
+final_mmotu_dlv3p_bbox_l4.0_K2_s1 ep 40 loss 0.1293 ep_secs 3.4
+final_mmotu_dlv3p_bbox_l4.0_K2_s0 ep 30 loss 0.1975 ep_secs 5.0
+final_mmotu_dlv3p_directional_l1.0_K16_s0 ep 20 loss 0.1546 ep_secs 3.8
+final_mmotu_dlv3p_bbox_l4.0_K2_s2 ep 20 loss 0.2752 ep_secs 5.8
+final_mmotu_dlv3p_directional_l1.0_K16_s1 ep 30 loss 0.1769 ep_secs 2.8
+final_mmotu_dlv3p_boundary_l2.0_K16_s2 ep 20 loss 0.1746 ep_secs 10.0
+final_mmotu_dlv3p_bbox_l4.0_K2_s1 ep 50 loss 0.107 ep_secs 3.2
+final_mmotu_dlv3p_boundary_l2.0_K16_s1 ep 40 loss 0.0681 ep_secs 6.0
+final_mmotu_dlv3p_boundary_l2.0_K16_s0 ep 50 loss 0.0744 ep_secs 5.8
+final_mmotu_unet_boundary_l2.0_K16_s2 ep 59 loss 0.1056 ep_secs 11.6
+final_mmotu_dlv3p_directional_l1.0_K16_s0 ep 30 loss 0.1374 ep_secs 3.7
+final_mmotu_dlv3p_directional_l1.0_K16_s1 ep 40 loss 0.0864 ep_secs 2.8
+final_mmotu_dlv3p_bbox_l4.0_K2_s0 ep 40 loss 0.1161 ep_secs 5.1
+final_mmotu_dlv3p_bbox_l4.0_K2_s1 ep 59 loss 0.1237 ep_secs 3.3
+final_mmotu_dlv3p_bbox_l4.0_K2_s2 ep 30 loss 0.2374 ep_secs 5.9
+final_mmotu_dlv3p_directional_l1.0_K16_s1 ep 50 loss 0.0756 ep_secs 2.8
+DONE final_mmotu_unet_boundary_l2.0_K16_s1 734
+final_mmotu_dlv3p_directional_l1.0_K16_s0 ep 40 loss 0.1024 ep_secs 3.7
+final_mmotu_dlv3p_directional_l1.0_K16_s2 ep 0 loss 1.5059 ep_secs 8.7
+final_mmotu_dlv3p_boundary_l2.0_K16_s0 ep 59 loss 0.0581 ep_secs 5.8
+final_mmotu_dlv3p_boundary_l2.0_K16_s1 ep 50 loss 0.0627 ep_secs 6.0
+final_mmotu_dlv3p_directional_l1.0_K16_s1 ep 59 loss 0.0803 ep_secs 2.8
+final_mmotu_dlv3p_bbox_l4.0_K2_s0 ep 50 loss 0.14 ep_secs 5.1
+final_mmotu_dlv3p_directional_l1.0_K16_s0 ep 50 loss 0.0929 ep_secs 3.7
+final_mmotu_dlv3p_boundary_l2.0_K16_s2 ep 30 loss 0.1064 ep_secs 9.7
+final_mmotu_dlv3p_bbox_l4.0_K2_s2 ep 40 loss 0.2086 ep_secs 5.9
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+DONE final_mmotu_unet_boundary_l2.0_K16_s2 790
+DONE final_mmotu_unet_bbox_l4.0_K2_s0 470
+final_busi_unet_dice_bce_l0_K16_s0 ep 0 loss 1.8467 ep_secs 4.1
+DONE final_mmotu_unet_bbox_l4.0_K2_s1 535
+DONE final_mmotu_unet_bbox_l4.0_K2_s2 240
+DONE final_mmotu_unet_directional_l1.0_K16_s0 496
+final_mmotu_dlv3p_boundary_l2.0_K16_s1 ep 59 loss 0.0675 ep_secs 5.9
+final_mmotu_dlv3p_bbox_l4.0_K2_s0 ep 59 loss 0.1412 ep_secs 5.0
+final_mmotu_dlv3p_directional_l1.0_K16_s0 ep 59 loss 0.0922 ep_secs 3.8
+DONE final_mmotu_unet_directional_l1.0_K16_s1 256
+DONE final_mmotu_unet_directional_l1.0_K16_s2 253
+DONE final_mmotu_dlv3p_dice_bce_l0_K16_s0 291
+final_busi_unet_dice_bce_l0_K16_s2 ep 0 loss 1.6249 ep_secs 2.1
+DONE final_mmotu_dlv3p_dice_bce_l0_K16_s1 205
+final_busi_unet_dice_bce_l0_K16_s1 ep 0 loss 1.4417 ep_secs 4.4
+DONE final_mmotu_dlv3p_dice_bce_l0_K16_s2 207
+final_busi_unet_boundary_l0.5_K16_s0 ep 0 loss 1.8921 ep_secs 4.3
+DONE final_mmotu_dlv3p_boundary_l2.0_K16_s0 415
+final_busi_unet_dice_bce_l0_K16_s2 ep 10 loss 0.5429 ep_secs 1.9
+final_busi_unet_dice_bce_l0_K16_s0 ep 10 loss 0.5855 ep_secs 4.0
+final_mmotu_dlv3p_bbox_l4.0_K2_s2 ep 50 loss 0.1837 ep_secs 5.9
+final_busi_unet_dice_bce_l0_K16_s1 ep 10 loss 0.7857 ep_secs 2.8
+final_busi_unet_dice_bce_l0_K16_s2 ep 20 loss 0.2126 ep_secs 1.9
+final_busi_unet_boundary_l0.5_K16_s0 ep 10 loss 0.5814 ep_secs 4.1
+DONE final_mmotu_dlv3p_boundary_l2.0_K16_s1 423
+final_busi_unet_dice_bce_l0_K16_s1 ep 20 loss 0.233 ep_secs 2.8
+final_busi_unet_dice_bce_l0_K16_s2 ep 30 loss 0.1605 ep_secs 2.0
+final_busi_unet_dice_bce_l0_K16_s0 ep 20 loss 0.2115 ep_secs 4.0
+final_busi_unet_boundary_l0.5_K16_s1 ep 0 loss 1.4998 ep_secs 4.1
+final_mmotu_dlv3p_boundary_l2.0_K16_s2 ep 40 loss 0.095 ep_secs 9.6
+final_mmotu_dlv3p_bbox_l4.0_K2_s2 ep 59 loss 0.1389 ep_secs 5.9
+final_busi_unet_dice_bce_l0_K16_s2 ep 40 loss 0.1252 ep_secs 1.9
+final_busi_unet_boundary_l0.5_K16_s2 ep 0 loss 1.6872 ep_secs 7.0
+final_busi_unet_dice_bce_l0_K16_s1 ep 30 loss 0.1567 ep_secs 2.8
+/root/modal_app.py:36: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  loss = crit(lg.float(), y); opt.zero_grad(set_to_none=True); scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sch.step()
+final_busi_unet_boundary_l0.5_K16_s0 ep 20 loss 0.2245 ep_secs 4.1
+final_busi_unet_bbox_l4.0_K2_s0 ep 0 loss 2.6683 ep_secs 3.0
+final_busi_unet_dice_bce_l0_K16_s2 ep 50 loss 0.1831 ep_secs 2.0
+final_busi_unet_dice_bce_l0_K16_s0 ep 30 loss 0.1571 ep_secs 4.0
+final_busi_unet_boundary_l0.5_K16_s1 ep 10 loss 0.653 ep_secs 4.0
+final_busi_unet_dice_bce_l0_K16_s1 ep 40 loss 0.1338 ep_secs 2.9
+final_busi_unet_dice_bce_l0_K16_s2 ep 59 loss 0.2031 ep_secs 1.9
+final_busi_unet_bbox_l4.0_K2_s0 ep 10 loss 1.1641 ep_secs 2.8
+/root/modal_app.py:36: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  loss = crit(lg.float(), y); opt.zero_grad(set_to_none=True); scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sch.step()
+final_busi_unet_bbox_l4.0_K2_s1 ep 0 loss 2.1677 ep_secs 2.1
+final_busi_unet_boundary_l0.5_K16_s0 ep 30 loss 0.1695 ep_secs 4.1
+final_busi_unet_dice_bce_l0_K16_s0 ep 40 loss 0.1313 ep_secs 4.0
+final_busi_unet_boundary_l0.5_K16_s1 ep 20 loss 0.2826 ep_secs 4.0
+final_busi_unet_dice_bce_l0_K16_s1 ep 50 loss 0.1187 ep_secs 2.9
+final_busi_unet_bbox_l4.0_K2_s0 ep 20 loss 0.5532 ep_secs 2.9
+final_busi_unet_bbox_l4.0_K2_s1 ep 10 loss 1.2107 ep_secs 2.1
+final_busi_unet_boundary_l0.5_K16_s2 ep 10 loss 0.4419 ep_secs 6.7
+final_mmotu_dlv3p_boundary_l2.0_K16_s2 ep 50 loss 0.0826 ep_secs 9.8
+final_busi_unet_dice_bce_l0_K16_s1 ep 59 loss 0.1197 ep_secs 2.8
+final_busi_unet_boundary_l0.5_K16_s0 ep 40 loss 0.1347 ep_secs 4.1
+final_busi_unet_bbox_l4.0_K2_s1 ep 20 loss 0.4884 ep_secs 2.0
+final_busi_unet_bbox_l4.0_K2_s0 ep 30 loss 0.4675 ep_secs 2.8
+final_busi_unet_dice_bce_l0_K16_s0 ep 50 loss 0.2744 ep_secs 4.0
+final_busi_unet_boundary_l0.5_K16_s1 ep 30 loss 0.1446 ep_secs 4.0
+final_busi_unet_bbox_l4.0_K2_s2 ep 0 loss 2.913 ep_secs 4.9
+final_busi_unet_directional_l4.0_K16_s0 ep 0 loss 2.8578 ep_secs 3.3
+final_busi_unet_bbox_l4.0_K2_s1 ep 30 loss 0.2918 ep_secs 2.0
+final_busi_unet_bbox_l4.0_K2_s0 ep 40 loss 0.2611 ep_secs 2.8
+final_busi_unet_boundary_l0.5_K16_s0 ep 50 loss 0.2375 ep_secs 4.0
+final_busi_unet_bbox_l4.0_K2_s1 ep 40 loss 0.2635 ep_secs 2.0
+final_busi_unet_dice_bce_l0_K16_s0 ep 59 loss 0.125 ep_secs 4.0
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+final_busi_unet_boundary_l0.5_K16_s2 ep 20 loss 0.2915 ep_secs 6.6
+/root/modal_app.py:36: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  loss = crit(lg.float(), y); opt.zero_grad(set_to_none=True); scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sch.step()
+final_busi_unet_boundary_l0.5_K16_s1 ep 40 loss 0.1383 ep_secs 4.0
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+final_busi_unet_directional_l4.0_K16_s0 ep 10 loss 1.0987 ep_secs 3.2final_busi_unet_directional_l4.0_K16_s1 ep 0 loss 2.2508 ep_secs 5.0
+
+final_busi_unet_bbox_l4.0_K2_s1 ep 50 loss 0.2126 ep_secs 2.0
+final_busi_unet_bbox_l4.0_K2_s0 ep 50 loss 0.299 ep_secs 2.8
+/root/modal_app.py:36: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  loss = crit(lg.float(), y); opt.zero_grad(set_to_none=True); scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sch.step()
+final_busi_unet_bbox_l4.0_K2_s2 ep 10 loss 0.8571 ep_secs 4.7
+final_busi_unet_directional_l4.0_K16_s2 ep 0 loss 2.885 ep_secs 5.1
+final_mmotu_dlv3p_boundary_l2.0_K16_s2 ep 59 loss 0.0757 ep_secs 9.8
+final_busi_unet_boundary_l0.5_K16_s0 ep 59 loss 0.127 ep_secs 4.1
+final_busi_unet_bbox_l4.0_K2_s1 ep 59 loss 0.1946 ep_secs 2.0
+final_busi_unet_directional_l4.0_K16_s0 ep 20 loss 0.4038 ep_secs 3.2
+final_busi_unet_bbox_l4.0_K2_s0 ep 59 loss 0.2419 ep_secs 2.8
+final_busi_unet_boundary_l0.5_K16_s1 ep 50 loss 0.1279 ep_secs 4.0
+final_busi_dlv3p_dice_bce_l0_K16_s0 ep 0 loss 1.4372 ep_secs 1.8
+final_busi_dlv3p_dice_bce_l0_K16_s1 ep 0 loss 1.5572 ep_secs 1.8
+final_busi_unet_directional_l4.0_K16_s1 ep 10 loss 1.1773 ep_secs 4.2
+final_busi_dlv3p_dice_bce_l0_K16_s0 ep 10 loss 0.2768 ep_secs 1.7
+final_busi_unet_bbox_l4.0_K2_s2 ep 20 loss 0.5872 ep_secs 4.9
+final_busi_dlv3p_dice_bce_l0_K16_s1 ep 10 loss 0.4023 ep_secs 1.7
+final_busi_unet_directional_l4.0_K16_s2 ep 10 loss 0.9152 ep_secs 4.4
+final_busi_dlv3p_dice_bce_l0_K16_s2 ep 0 loss 1.4272 ep_secs 5.6
+final_busi_unet_boundary_l0.5_K16_s2 ep 30 loss 0.1352 ep_secs 6.6
+final_busi_unet_directional_l4.0_K16_s0 ep 30 loss 0.4232 ep_secs 3.1
+final_busi_dlv3p_dice_bce_l0_K16_s0 ep 20 loss 0.2062 ep_secs 1.8
+final_busi_dlv3p_dice_bce_l0_K16_s1 ep 20 loss 0.2163 ep_secs 1.6
+final_busi_unet_boundary_l0.5_K16_s1 ep 59 loss 0.1237 ep_secs 4.0
+final_busi_dlv3p_dice_bce_l0_K16_s2 ep 10 loss 0.2891 ep_secs 2.3
+final_busi_unet_directional_l4.0_K16_s1 ep 20 loss 0.5126 ep_secs 4.2
+final_busi_dlv3p_dice_bce_l0_K16_s0 ep 30 loss 0.1341 ep_secs 1.7
+final_busi_dlv3p_dice_bce_l0_K16_s1 ep 30 loss 0.1381 ep_secs 1.6
+final_busi_dlv3p_boundary_l0.5_K16_s0 ep 0 loss 1.5048 ep_secs 3.8
+final_busi_unet_directional_l4.0_K16_s0 ep 40 loss 0.2576 ep_secs 3.2
+final_busi_unet_directional_l4.0_K16_s2 ep 20 loss 0.4382 ep_secs 4.3
+final_busi_dlv3p_dice_bce_l0_K16_s2 ep 20 loss 0.2557 ep_secs 2.1
+final_busi_unet_bbox_l4.0_K2_s2 ep 30 loss 0.3246 ep_secs 4.6
+final_busi_dlv3p_dice_bce_l0_K16_s1 ep 40 loss 0.1493 ep_secs 1.6
+final_busi_dlv3p_dice_bce_l0_K16_s0 ep 40 loss 0.1266 ep_secs 1.7
+DONE final_mmotu_dlv3p_boundary_l2.0_K16_s2 678
+DONE final_mmotu_dlv3p_bbox_l4.0_K2_s0 390
+final_busi_dlv3p_boundary_l0.5_K16_s1 ep 0 loss 1.6312 ep_secs 6.2
+DONE final_mmotu_dlv3p_bbox_l4.0_K2_s1 296
+final_busi_dlv3p_dice_bce_l0_K16_s1 ep 50 loss 0.1195 ep_secs 1.6
+DONE final_mmotu_dlv3p_bbox_l4.0_K2_s2 453
+final_busi_dlv3p_dice_bce_l0_K16_s0 ep 50 loss 0.165 ep_secs 1.7
+final_busi_unet_directional_l4.0_K16_s1 ep 30 loss 0.2893 ep_secs 4.2
+final_busi_dlv3p_dice_bce_l0_K16_s2 ep 30 loss 0.1399 ep_secs 2.2
+DONE final_mmotu_dlv3p_directional_l1.0_K16_s0 322
+final_busi_unet_directional_l4.0_K16_s0 ep 50 loss 0.3591 ep_secs 3.2
+final_busi_dlv3p_boundary_l0.5_K16_s0 ep 10 loss 0.2503 ep_secs 3.7
+final_busi_unet_boundary_l0.5_K16_s2 ep 40 loss 0.1126 ep_secs 6.7
+DONE final_mmotu_dlv3p_directional_l1.0_K16_s1 235
+final_busi_dlv3p_dice_bce_l0_K16_s1 ep 59 loss 0.1119 ep_secs 1.7
+final_busi_dlv3p_dice_bce_l0_K16_s0 ep 59 loss 0.1162 ep_secs 1.7
+final_busi_unet_directional_l4.0_K16_s2 ep 30 loss 0.3559 ep_secs 4.4
+final_busi_dlv3p_dice_bce_l0_K16_s2 ep 40 loss 0.1117 ep_secs 2.4
+final_busi_unet_bbox_l4.0_K2_s2 ep 40 loss 0.22 ep_secs 4.7
+/root/modal_app.py:36: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  loss = crit(lg.float(), y); opt.zero_grad(set_to_none=True); scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sch.step()
+final_busi_dlv3p_bbox_l4.0_K2_s0 ep 0 loss 2.207 ep_secs 1.9
+final_busi_dlv3p_boundary_l0.5_K16_s2 ep 0 loss 1.4789 ep_secs 4.0
+final_busi_unet_directional_l4.0_K16_s0 ep 59 loss 0.2416 ep_secs 3.2
+final_busi_dlv3p_boundary_l0.5_K16_s0 ep 20 loss 0.1836 ep_secs 3.7
+final_busi_unet_directional_l4.0_K16_s1 ep 40 loss 0.2193 ep_secs 4.2
+final_busi_dlv3p_dice_bce_l0_K16_s2 ep 50 loss 0.1322 ep_secs 2.2
+final_busi_dlv3p_bbox_l4.0_K2_s0 ep 10 loss 0.8113 ep_secs 1.8
+final_busi_dlv3p_bbox_l4.0_K2_s1 ep 0 loss 1.9655 ep_secs 2.5
+final_busi_dlv3p_boundary_l0.5_K16_s1 ep 10 loss 0.4597 ep_secs 5.9
+final_busi_unet_directional_l4.0_K16_s2 ep 40 loss 0.2331 ep_secs 4.4
+final_busi_dlv3p_bbox_l4.0_K2_s0 ep 20 loss 0.407 ep_secs 1.8
+final_busi_dlv3p_dice_bce_l0_K16_s2 ep 59 loss 0.1249 ep_secs 2.3
+final_busi_dlv3p_boundary_l0.5_K16_s2 ep 10 loss 0.2409 ep_secs 3.9
+final_busi_unet_boundary_l0.5_K16_s2 ep 50 loss 0.1798 ep_secs 6.6
+final_busi_unet_bbox_l4.0_K2_s2 ep 50 loss 0.3175 ep_secs 4.8
+final_busi_dlv3p_bbox_l4.0_K2_s1 epfinal_busi_dlv3p_boundary_l0.5_K16_s0 ep 30 loss 10 loss 1.014 ep_secs 2.5
+ 0.1219 ep_secs 3.7
+final_busi_dlv3p_bbox_l4.0_K2_s0 ep 30 loss 0.3873 ep_secs 1.8
+final_busi_unet_directional_l4.0_K16_s1 ep 50 loss 0.234 ep_secs 4.2
+final_busi_dlv3p_bbox_l4.0_K2_s2 ep 0 loss 2.1061 ep_secs 2.5
+final_busi_dlv3p_bbox_l4.0_K2_s0 ep 40 loss 0.2376 ep_secs 1.8
+final_busi_dlv3p_bbox_l4.0_K2_s1 ep 20 loss 0.4547 ep_secs 2.4
+final_busi_dlv3p_boundary_l0.5_K16_s2 ep 20 loss 0.3153 ep_secs 3.7
+final_busi_unet_directional_l4.0_K16_s2 ep 50 loss 0.3608 ep_secs 4.3
+final_busi_dlv3p_bbox_l4.0_K2_s2 ep 10 loss 0.7751 ep_secs 2.3
+final_busi_dlv3p_boundary_l0.5_K16_s1 ep 20 lossfinal_busi_dlv3p_boundary_l0.5_K16_s0 ep 40 loss 0.2365 ep_secs 6.0
+ 0.1227 ep_secs 3.7
+final_busi_unet_bbox_l4.0_K2_s2 ep 59 loss 0.2919 ep_secs 4.7
+final_busi_dlv3p_bbox_l4.0_K2_s0 ep 50 loss 0.2728 ep_secs 1.8
+final_busi_unet_directional_l4.0_K16_s1 ep 59 loss 0.2026 ep_secs 4.2
+final_busi_dlv3p_bbox_l4.0_K2_s1 ep 30 loss 0.3014 ep_secs 2.6
+final_busi_unet_boundary_l0.5_K16_s2 ep 59 loss 0.1768 ep_secs 6.6
+final_busi_dlv3p_bbox_l4.0_K2_s0 ep 59 loss 0.2539 ep_secs 1.8
+final_busi_dlv3p_bbox_l4.0_K2_s2 ep 20 loss 0.6803 ep_secs 2.7
+final_busi_dlv3p_directional_l4.0_K16_s0 ep 0 loss 2.0137 ep_secs 4.2
+final_busi_dlv3p_boundary_l0.5_K16_s2 ep 30 loss 0.1555 ep_secs 3.7
+final_busi_dlv3p_directional_l4.0_K16_s1 ep 0 loss 1.9381 ep_secs 6.3
+final_busi_unet_directional_l4.0_K16_s2 ep 59 loss 0.2544 ep_secs 4.4
+final_busi_dlv3p_boundary_l0.5_K16_s0 ep 50 loss 0.1431 ep_secs 3.7
+final_busi_dlv3p_directional_l4.0_K16_s2 ep 0 loss 2.1208 ep_secs 3.6
+final_mmotu_dlv3p_directional_l1.0_K16_s2 ep 0 loss 1.5076 ep_secs 3.0
+final_busi_dlv3p_bbox_l4.0_K2_s1 ep 40 loss 0.225 ep_secs 2.5
+final_busi_dlv3p_bbox_l4.0_K2_s2 ep 30 loss 0.3315 ep_secs 2.3
+final_busi_dlv3p_boundary_l0.5_K16_s1 ep 30 loss 0.1281 ep_secs 5.9
+final_busi_dlv3p_bbox_l4.0_K2_s1 ep 50 loss 0.207 ep_secs 2.5
+final_busi_dlv3p_directional_l4.0_K16_s1 ep 10 loss 1.0892 ep_secs 3.4
+final_mmotu_dlv3p_directional_l1.0_K16_s2 ep 10 loss 0.4047 ep_secs 2.9
+final_busi_dlv3p_boundary_l0.5_K16_s2 ep 40 loss 0.1195 ep_secs 3.8
+final_busi_dlv3p_boundary_l0.5_K16_s0 ep 59 loss 0.1242 ep_secs 3.7
+final_busi_dlv3p_bbox_l4.0_K2_s2 ep 40 loss 0.2339 ep_secs 2.3
+final_busi_dlv3p_directional_l4.0_K16_s0 ep 10 loss 0.7422 ep_secs 4.2
+final_busi_dlv3p_directional_l4.0_K16_s2 ep 10 loss 0.8198 ep_secs 3.7
+final_busi_dlv3p_bbox_l4.0_K2_s1 ep 59 loss 0.1932 ep_secs 2.6
+final_busi_dlv3p_bbox_l4.0_K2_s2 ep 50 loss 0.2104 ep_secs 2.3
+final_mmotu_dlv3p_directional_l1.0_K16_s2 ep 20 loss 0.2053 ep_secs 2.9
+final_busi_dlv3p_directional_l4.0_K16_s1 ep 20 loss 0.4865 ep_secs 3.4
+final_busi_dlv3p_boundary_l0.5_K16_s2 ep 50 loss 0.108 ep_secs 3.7
+final_busi_dlv3p_directional_l4.0_K16_s2 ep 20 loss 0.5955 ep_secs 3.7
+final_busi_dlv3p_directional_l4.0_K16_s0 ep 20 loss 0.3965 ep_secs 4.2
+final_busi_dlv3p_bbox_l4.0_K2_s2 ep 59 loss 0.2784 ep_secs 2.3
+final_busi_dlv3p_boundary_l0.5_K16_s1 ep 40 loss 0.1209 ep_secs 6.0
+final_mmotu_dlv3p_directional_l1.0_K16_s2 ep 30 loss 0.1431 ep_secs 2.9
+final_busi_dlv3p_directional_l4.0_K16_s1 ep 30 loss 0.321 ep_secs 3.4
+final_busi_dlv3p_boundary_l0.5_K16_s2 ep 59 loss 0.128 ep_secs 3.8
+final_busi_dlv3p_directional_l4.0_K16_s2 ep 30 loss 0.3862 ep_secs 3.8
+final_mmotu_dlv3p_directional_l1.0_K16_s2 ep 40 loss 0.1203 ep_secs 3.0
+final_busi_dlv3p_directional_l4.0_K16_s0 ep 30 loss 0.4123 ep_secs 4.2
+final_busi_dlv3p_directional_l4.0_K16_s1 ep 40 loss 0.1942 ep_secs 3.5
+final_busi_dlv3p_boundary_l0.5_K16_s1 ep 50 loss 0.1096 ep_secs 6.0
+final_mmotu_dlv3p_directional_l1.0_K16_s2 ep 50 loss 0.1124 ep_secs 3.0
+final_busi_dlv3p_directional_l4.0_K16_s2 ep 40 loss 0.2481 ep_secs 3.7
+final_busi_dlv3p_directional_l4.0_K16_s0 ep 40 loss 0.2342 ep_secs 4.3
+final_busi_dlv3p_directional_l4.0_K16_s1 ep 50 loss 0.1851 ep_secs 3.5
+final_mmotu_dlv3p_directional_l1.0_K16_s2 ep 59 loss 0.1084 ep_secs 2.9
+final_busi_dlv3p_directional_l4.0_K16_s2 ep 50 loss 0.2376 ep_secs 3.6
+final_busi_dlv3p_boundary_l0.5_K16_s1 ep 59 loss 0.1151 ep_secs 6.0
+final_busi_dlv3p_directional_l4.0_K16_s1 ep 59 loss 0.1858 ep_secs 3.4
+final_busi_dlv3p_directional_l4.0_K16_s0 ep 50 loss 0.2679 ep_secs 4.1
+final_busi_dlv3p_directional_l4.0_K16_s2 ep 59 loss 0.3089 ep_secs 3.6
+DONE final_mmotu_dlv3p_directional_l1.0_K16_s2 239
+DONE final_busi_unet_dice_bce_l0_K16_s0 257
+final_busi_dlv3p_directional_l4.0_K16_s0 ep 59 loss 0.2434 ep_secs 4.2
+DONE final_busi_unet_dice_bce_l0_K16_s1 189
+DONE final_busi_unet_dice_bce_l0_K16_s2 129
+DONE final_busi_unet_boundary_l0.5_K16_s0 256
+DONE final_busi_unet_boundary_l0.5_K16_s1 255
+DONE final_busi_unet_boundary_l0.5_K16_s2 417
+DONE final_busi_unet_bbox_l4.0_K2_s0 189
+DONE final_busi_unet_bbox_l4.0_K2_s1 135
+DONE final_busi_unet_bbox_l4.0_K2_s2 306
+DONE final_busi_unet_directional_l4.0_K16_s0 210
+DONE final_busi_unet_directional_l4.0_K16_s1 269
+DONE final_busi_unet_directional_l4.0_K16_s2 279
+DONE final_busi_dlv3p_dice_bce_l0_K16_s0 115
+DONE final_busi_dlv3p_dice_bce_l0_K16_s1 111
+DONE final_busi_dlv3p_dice_bce_l0_K16_s2 156
+DONE final_busi_dlv3p_boundary_l0.5_K16_s0 233
+DONE final_busi_dlv3p_boundary_l0.5_K16_s1 376
+DONE final_busi_dlv3p_boundary_l0.5_K16_s2 239
+DONE final_busi_dlv3p_bbox_l4.0_K2_s0 120
+DONE final_busi_dlv3p_bbox_l4.0_K2_s1 169
+DONE final_busi_dlv3p_bbox_l4.0_K2_s2 162
+DONE final_busi_dlv3p_directional_l4.0_K16_s0 275
+DONE final_busi_dlv3p_directional_l4.0_K16_s1 226
+DONE final_busi_dlv3p_directional_l4.0_K16_s2 236
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/buiquangphuong941/main/ap-Zv3hDe55n0vTMrY5v4oWWI

@@ -1,0 +1,100 @@
+✓ Initialized. View run at 
+https://modal.com/apps/buiquangphuong941/main/ap-D4wzZn0bezChKvZS1B4XDu
+✓ Created objects.
+├── 🔨 Created mount E:\MIDL_2\code\modal_app.py
+├── 🔨 Created mount E:\MIDL_2\code\metrics.py
+├── 🔨 Created mount E:\MIDL_2\code\losses.py
+└── 🔨 Created function run.
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+ablation_mmotu_unet_directional_l1.0_K4_s0 ep 0 loss 1.694 ep_secs 4.4
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+ablation_mmotu_unet_directional_l1.0_K4_s0 ep 10 loss 0.3886 ep_secs 3.0
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+ablation_mmotu_unet_directional_l1.0_K8_s0 ep 0 loss 1.669 ep_secs 5.4
+ablation_mmotu_unet_directional_l1.0_K4_s0 ep 20 loss 0.168 ep_secs 3.0
+ablation_mmotu_unet_directional_l1.0_K8_s0 ep 10 loss 0.3251 ep_secs 3.4
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+ablation_mmotu_unet_directional_l1.0_K32_s0 ep 0 loss 1.6715 ep_secs 5.0
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/root/modal_app.py:36: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  loss = crit(lg.float(), y); opt.zero_grad(set_to_none=True); scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sch.step()
+/root/modal_app.py:36: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  loss = crit(lg.float(), y); opt.zero_grad(set_to_none=True); scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sch.step()
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+ablation_busi_unet_directional_l4.0_K32_s0 ep 0 loss 2.7755 ep_secs 3.6
+/root/modal_app.py:36: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  loss = crit(lg.float(), y); opt.zero_grad(set_to_none=True); scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sch.step()
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+ablation_busi_unet_directional_l4.0_K8_s0 ep 0 loss 2.885 ep_secs 3.3
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+ablation_busi_unet_directional_l4.0_K4_s0 ep 0 loss 2.9352 ep_secs 4.0
+ablation_mmotu_unet_directional_l1.0_K4_s0 ep 30 loss 0.208 ep_secs 3.0
+ablation_mmotu_unet_directional_l1.0_K8_s0 ep 20 loss 0.2141 ep_secs 3.4
+ablation_busi_unet_directional_l4.0_K8_s0 ep 10 loss 0.9798 ep_secs 1.9
+ablation_busi_unet_directional_l4.0_K32_s0 ep 10 loss 1.0307 ep_secs 2.2
+ablation_busi_unet_directional_l4.0_K4_s0 ep 10 loss 0.9955 ep_secs 2.0
+ablation_mmotu_unet_directional_l1.0_K32_s0 ep 10 loss 0.3202 ep_secs 3.5
+ablation_mmotu_unet_directional_l1.0_K4_s0 ep 40 loss 0.1359 ep_secs 3.0
+ablation_busi_unet_directional_l4.0_K8_s0 ep 20 loss 0.5666 ep_secs 1.9
+ablation_busi_unet_directional_l4.0_K32_s0 ep 20 loss 0.4724 ep_secs 2.2
+ablation_busi_unet_directional_l4.0_K4_s0 ep 20 loss 0.5143 ep_secs 2.1
+ablation_mmotu_unet_directional_l1.0_K8_s0 ep 30 loss 0.1487 ep_secs 3.3
+ablation_busi_unet_directional_l4.0_K8_s0 ep 30 loss 0.4845 ep_secs 1.9
+ablation_mmotu_unet_directional_l1.0_K4_s0 ep 50 loss 0.1492 ep_secs 3.0
+ablation_busi_unet_directional_l4.0_K4_s0 ep 30 loss 0.4629 ep_secs 2.1
+ablation_busi_unet_directional_l4.0_K32_s0 ep 30 loss 0.3711 ep_secs 2.1
+ablation_mmotu_unet_directional_l1.0_K32_s0 ep 20 loss 0.209 ep_secs 3.5
+ablation_busi_unet_directional_l4.0_K8_s0 ep 40 loss 0.2716 ep_secs 1.9
+ablation_mmotu_unet_directional_l1.0_K8_s0 ep 40 loss 0.1352 ep_secs 3.4
+ablation_busi_unet_directional_l4.0_K4_s0 ep 40 loss 0.2724 ep_secs 2.1
+ablation_busi_unet_directional_l4.0_K32_s0 ep 40 loss 0.2578 ep_secs 2.2
+ablation_mmotu_unet_directional_l1.0_K4_s0 ep 59 loss 0.11 ep_secs 3.0
+ablation_busi_unet_directional_l4.0_K8_s0 ep 50 loss 0.3743 ep_secs 1.9
+ablation_mmotu_unet_directional_l1.0_K32_s0 ep 30 loss 0.1523 ep_secs 3.5
+ablation_busi_unet_directional_l4.0_K4_s0 ep 50 loss 0.4418 ep_secs 2.0
+ablation_busi_unet_directional_l4.0_K32_s0 ep 50 loss 0.3943 ep_secs 2.2
+ablation_mmotu_unet_directional_l1.0_K8_s0 ep 50 loss 0.1313 ep_secs 3.4
+ablation_busi_unet_directional_l4.0_K8_s0 ep 59 loss 0.26 ep_secs 2.0
+ablation_busi_unet_directional_l4.0_K4_s0 ep 59 loss 0.2782 ep_secs 2.0
+ablation_busi_unet_directional_l4.0_K32_s0 ep 59 loss 0.2997 ep_secs 2.2
+ablation_mmotu_unet_directional_l1.0_K32_s0 ep 40 loss 0.122 ep_secs 3.5
+ablation_mmotu_unet_directional_l1.0_K8_s0 ep 59 loss 0.0954 ep_secs 3.4
+DONE ablation_mmotu_unet_directional_l1.0_K4_s0 241
+ablation_mmotu_unet_directional_l1.0_K32_s0 ep 50 loss 0.1386 ep_secs 3.5
+ablation_mmotu_unet_directional_l1.0_K32_s0 ep 59 loss 0.0955 ep_secs 3.5
+DONE ablation_mmotu_unet_directional_l1.0_K8_s0 277
+DONE ablation_mmotu_unet_directional_l1.0_K32_s0 273
+DONE ablation_busi_unet_directional_l4.0_K4_s0 140
+DONE ablation_busi_unet_directional_l4.0_K8_s0 128
+DONE ablation_busi_unet_directional_l4.0_K32_s0 143
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/buiquangphuong941/main/ap-D4wzZn0bezChKvZS1B4XDu

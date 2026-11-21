@@ -1,0 +1,11 @@
+E:\MIDL_2\code\prep.py:77: DeprecationWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  print("multi-image groups:", df.groupby("dataset").apply(lambda d: int((d.groupby("group").size() > 1).sum())).to_dict())
+                 n  groups  pos
+dataset split                  
+busi    dev     76      62   65
+        test   163     132  133
+        train  541     445  449
+mmotu   dev    133     129  133
+        test   555     458  555
+        train  781     734  781
+multi-image groups: {'busi': 115, 'mmotu': 113}

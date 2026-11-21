@@ -1,0 +1,12 @@
+{
+ "busi": {
+  "bbox": 4.0,
+  "boundary": 0.5,
+  "directional": 4.0
+ },
+ "mmotu": {
+  "bbox": 4.0,
+  "boundary": 2.0,
+  "directional": 1.0
+ }
+}

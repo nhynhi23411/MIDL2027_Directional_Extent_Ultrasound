@@ -1,0 +1,28 @@
+Defaulting to user installation because normal site-packages is not writeable
+WARNING: Ignoring invalid distribution ~pmath (C:\Users\pc\AppData\Roaming\Python\Python312\site-packages)
+WARNING: Ignoring invalid distribution ~umpy (C:\Users\pc\AppData\Roaming\Python\Python312\site-packages)
+Looking in indexes: https://download.pytorch.org/whl/cu126
+Collecting torch
+  Downloading https://download-r2.pytorch.org/whl/cu126/torch-2.14.1%2Bcu126-cp312-cp312-win_amd64.whl.metadata (37 kB)
+Collecting torchvision
+  Downloading https://download-r2.pytorch.org/whl/cu126/torchvision-0.29.1%2Bcu126-cp312-cp312-win_amd64.whl.metadata (5.8 kB)
+Downloading https://download-r2.pytorch.org/whl/cu126/torch-2.14.1%2Bcu126-cp312-cp312-win_amd64.whl (2602.8 MB)
+   ---------------------------------------- 2.6/2.6 GB 2.9 MB/s eta 0:00:00
+Downloading https://download-r2.pytorch.org/whl/cu126/torchvision-0.29.1%2Bcu126-cp312-cp312-win_amd64.whl (6.1 MB)
+   ---------------------------------------- 6.1/6.1 MB 5.4 MB/s eta 0:00:00
+Installing collected packages: torchvision, torch
+  Attempting uninstall: torchvision
+    Found existing installation: torchvision 0.22.1+cpu
+    Uninstalling torchvision-0.22.1+cpu:
+      Successfully uninstalled torchvision-0.22.1+cpu
+  Attempting uninstall: torch
+    Found existing installation: torch 2.7.1+cpu
+    Uninstalling torch-2.7.1+cpu:
+      Successfully uninstalled torch-2.7.1+cpu
+
+WARNING: Ignoring invalid distribution ~pmath (C:\Users\pc\AppData\Roaming\Python\Python312\site-packages)
+WARNING: Ignoring invalid distribution ~umpy (C:\Users\pc\AppData\Roaming\Python\Python312\site-packages)
+Successfully installed torch-2.14.1+cu126 torchvision-0.29.1+cu126
+
+[notice] A new release of pip is available: 25.1.1 -> 26.3
+[notice] To update, run: python.exe -m pip install --upgrade pip

@@ -1,0 +1,208 @@
+✓ Initialized. View run at 
+https://modal.com/apps/buiquangphuong941/main/ap-zonEjWVrugv1Jr3WfDRk3o
+✓ Created objects.
+├── 🔨 Created mount E:\MIDL_2\code\metrics.py
+├── 🔨 Created mount E:\MIDL_2\code\modal_app.py
+├── 🔨 Created mount E:\MIDL_2\code\losses.py
+└── 🔨 Created function run.
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/root/modal_app.py:36: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  loss = crit(lg.float(), y); opt.zero_grad(set_to_none=True); scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sch.step()
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+v2pilot_busi_unet_dice_bce_l0_K16_s0 ep 0 loss 1.8209 ep_secs 5.5
+/usr/local/lib/python3.12/site-packages/albumentations/core/validation.py:114: UserWarning: ShiftScaleRotate is a special case of Affine transform. Please use Affine transform instead.
+  original_init(self, **validated_kwargs)
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+v2pilot_mmotu_unet_directional2_l0.25_K16_s0 ep 0 loss 1.6313 ep_secs 8.2
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+v2pilot_mmotu_unet_directional2_l1.0_K16_s0 ep 0 loss 1.7746 ep_secs 8.1
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+v2pilot_mmotu_unet_directional2_l4.0_K16_s0 ep 0 loss 2.0991 ep_secs 8.1
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+v2pilot_busi_unet_boundary_l0.1_K16_s0 ep 0 loss 1.799 ep_secs 8.2
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+v2pilot_busi_unet_boundary_l2.0_K16_s0 ep 0 loss 2.0012 ep_secs 8.1
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+v2pilot_busi_unet_boundary_l0.5_K16_s0 ep 0 loss 1.8553 ep_secs 8.3
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+v2pilot_busi_unet_directional_l0.25_K16_s0 ep 0 loss 1.8589 ep_secs 6.9
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+/root/modal_app.py:37: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if ep % 10 == 0 or ep == E - 1: print(cfg['tag'], 'ep', ep, 'loss', round(float(loss), 4), 'ep_secs', round(time.time() - te, 1), flush=True)
+v2pilot_busi_unet_bbox_l0.25_K2_s0v2pilot_busi_unet_bbox_l1.0_K2_s0 ep  ep 0 loss 1.8327 ep_secs 5.8
+0 loss 1.9968 ep_secs 5.8
+v2pilot_busi_unet_dice_bce_l0_K16_s0 ep 10 loss 0.5244 ep_secs 4.4
+v2pilot_busi_unet_bbox_l0.25_K2_s0 ep 10 loss 0.5911 ep_secs 4.5
+v2pilot_busi_unet_bbox_l1.0_K2_s0 ep 10 loss 0.7231 ep_secs 4.5
+v2pilot_busi_unet_directional_l0.25_K16_s0 ep 10 loss 0.5566 ep_secs 5.4
+v2pilot_mmotu_unet_directional2_l1.0_K16_s0 ep v2pilot_mmotu_unet_directional2_l4.0_K16_s0 ep 10 loss 0.3822 ep_secs 6.8
+10 loss 0.6857 ep_secs 6.8
+v2pilot_mmotu_unet_directional2_l0.25_K16_s0 ep 10 loss 0.3096 ep_secs 7.0
+v2pilot_busi_unet_boundary_l0.1_K16_s0 ep 10 loss 0.5701 ep_secs 7.1
+v2pilot_busi_unet_boundary_l2.0_K16_s0 ep 10 loss 0.5857 ep_secs 7.0
+v2pilot_busi_unet_boundary_l0.5_K16_s0 ep 10 loss 0.5455 ep_secs 7.1
+v2pilot_busi_unet_dice_bce_l0_K16_s0 ep 20 loss 0.6565 ep_secs 4.4
+v2pilot_busi_unet_bbox_l0.25_K2_s0 ep 20 loss 0.583 ep_secs 4.5
+v2pilot_busi_unet_bbox_l1.0_K2_s0 ep 20 loss 0.6333 ep_secs 4.5
+v2pilot_busi_unet_directional_l0.25_K16_s0 ep 20 loss 0.509 ep_secs 5.4
+v2pilot_busi_unet_dice_bce_l0_K16_s0 ep 30 loss 0.3588 ep_secs 4.4
+v2pilot_mmotu_unet_directional2_l4.0_K16_s0 ep 20 loss 0.3872 ep_secs 6.9
+v2pilot_mmotu_unet_directional2_l1.0_K16_s0 ep 20 loss 0.3533 ep_secs 6.9
+v2pilot_mmotu_unet_directional2_l0.25_K16_s0 ep 20 loss 0.2781 ep_secs 7.0
+v2pilot_busi_unet_boundary_l2.0_K16_s0 ep 20 loss 0.4914 ep_secs 7.0
+v2pilot_busi_unet_boundary_l0.1_K16_s0v2pilot_busi_unet_boundary_l0.5_K16_s0 ep 20 loss 0.4836 ep_secs 7.0
+ ep 20 loss 0.5077 ep_secs 7.1
+v2pilot_busi_unet_bbox_l0.25_K2_s0 ep 30 loss 0.3237 ep_secs 4.5
+v2pilot_busi_unet_bbox_l1.0_K2_s0 ep 30 loss 0.3847 ep_secs 4.6
+v2pilot_busi_unet_directional_l0.25_K16_s0 ep 30 loss 0.3316 ep_secs 5.3
+v2pilot_busi_unet_dice_bce_l0_K16_s0 ep 40 loss 0.2389 ep_secs 4.5
+v2pilot_busi_unet_bbox_l0.25_K2_s0 ep 40 loss 0.2477 ep_secs 4.5
+v2pilot_busi_unet_bbox_l1.0_K2_s0 ep 40 loss 0.2567 ep_secs 4.5
+v2pilot_mmotu_unet_directional2_l4.0_K16_s0 ep 30 loss 0.4511 ep_secs 6.8
+v2pilot_mmotu_unet_directional2_l1.0_K16_s0 ep 30 loss 0.2137 ep_secs 6.9
+v2pilot_mmotu_unet_directional2_l0.25_K16_s0 ep 30 loss 0.2024 ep_secs 6.9
+v2pilot_busi_unet_boundary_l2.0_K16_s0 ep 30 loss 0.3239 ep_secs 7.1
+v2pilot_busi_unet_boundary_l0.5_K16_s0 ep 30 loss 0.3415 ep_secs 7.0
+v2pilot_busi_unet_boundary_l0.1_K16_s0 ep 30 loss 0.315 ep_secs 7.2
+v2pilot_busi_unet_dice_bce_l0_K16_s0 ep 50 loss 0.2583 ep_secs 4.5
+v2pilot_busi_unet_directional_l0.25_K16_s0 ep 40 loss 0.2355 ep_secs 5.4
+v2pilot_busi_unet_bbox_l0.25_K2_s0 ep 50 loss 0.2484 ep_secs 4.5
+v2pilot_busi_unet_bbox_l1.0_K2_s0 ep 50 loss 0.2691 ep_secs 4.5
+v2pilot_busi_unet_dice_bce_l0_K16_s0 ep 59 loss 0.2529 ep_secs 4.4
+v2pilot_mmotu_unet_directional2_l4.0_K16_s0 ep 40 loss 0.2248 ep_secs 6.9
+v2pilot_mmotu_unet_directional2_l1.0_K16_s0 ep 40 loss 0.1563 ep_secs 6.9
+v2pilot_mmotu_unet_directional2_l0.25_K16_s0 ep 40 loss 0.1484 ep_secs 6.9
+v2pilot_busi_unet_directional_l0.25_K16_s0 ep 50 loss 0.2516 ep_secs 5.4
+v2pilot_busi_unet_bbox_l0.25_K2_s0 ep 59 loss 0.276 ep_secs 5.5
+v2pilot_busi_unet_directional_l1.0_K16_s0 ep 0 loss 2.0555 ep_secs 5.2
+v2pilot_busi_unet_bbox_l1.0_K2_s0 ep 59 loss 0.2905 ep_secs 5.6
+v2pilot_busi_unet_boundary_l2.0_K16_s0 ep 40 loss 0.2385 ep_secs 7.1
+v2pilot_busi_unet_boundary_l0.5_K16_s0 ep 40 loss 0.2318 ep_secs 7.1
+v2pilot_busi_unet_boundary_l0.1_K16_s0 ep 40 loss 0.2531 ep_secs 7.2
+/root/modal_app.py:36: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  loss = crit(lg.float(), y); opt.zero_grad(set_to_none=True); scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sch.step()
+/root/modal_app.py:36: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  loss = crit(lg.float(), y); opt.zero_grad(set_to_none=True); scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sch.step()
+v2pilot_busi_unet_bbox_l4.0_K2_s0 ep 0 loss 2.5614 ep_secs 4.5
+v2pilot_busi_unet_directional_l4.0_K16_s0 ep 0 loss 2.7636 ep_secs 5.0
+v2pilot_busi_unet_directional_l0.25_K16_s0 ep 59 loss 0.2355 ep_secs 5.4
+v2pilot_busi_unet_directional_l1.0_K16_s0 ep 10 loss 0.6725 ep_secs 4.9
+v2pilot_mmotu_unet_directional2_l4.0_K16_s0 ep 50 loss 0.1571 ep_secs 6.9
+v2pilot_mmotu_unet_directional2_l1.0_K16_s0 ep 50 loss 0.1863 ep_secs 6.9
+v2pilot_busi_unet_bbox_l4.0_K2_s0 ep 10 loss 1.1119 ep_secs 4.5
+v2pilot_mmotu_unet_directional2_l0.25_K16_s0 ep 50 loss 0.2101 ep_secs 7.0
+v2pilot_busi_unet_directional2_l0.25_K16_s0 ep 0 loss 1.967 ep_secs 5.5
+v2pilot_busi_unet_directional_l4.0_K16_s0 ep 10 loss 1.1026 ep_secs 5.0
+v2pilot_busi_unet_boundary_l2.0_K16_s0 ep 50 loss 0.234 ep_secs 7.1
+v2pilot_busi_unet_boundary_l0.5_K16_s0 ep 50 loss 0.2463 ep_secs 7.1
+v2pilot_busi_unet_boundary_l0.1_K16_s0 ep 50 loss 0.2527 ep_secs 7.2
+v2pilot_busi_unet_directional_l1.0_K16_s0 ep 20 loss 0.6369 ep_secs 4.9
+v2pilot_busi_unet_bbox_l4.0_K2_s0 ep 20 loss 0.8264 ep_secs 4.5
+v2pilot_busi_unet_directional_l4.0_K16_s0 ep v2pilot_mmotu_unet_directional2_l4.0_K16_s0 ep 59 loss 0.2084 ep_secs 6.8
+20 loss 0.8834 ep_secs 5.0
+v2pilot_busi_unet_directional2_l0.25_K16_s0 ep 10 loss 0.5715 ep_secs 5.4
+v2pilot_mmotu_unet_directional2_l1.0_K16_s0 ep 59 loss 0.1108 ep_secs 6.9
+v2pilot_mmotu_unet_directional2_l0.25_K16_s0 ep 59 loss 0.0989 ep_secs 7.0
+v2pilot_busi_unet_boundary_l2.0_K16_s0 ep 59 loss 0.2518 ep_secs 7.0
+v2pilot_busi_unet_boundary_l0.5_K16_s0 ep 59 loss 0.2711 ep_secs 7.1
+v2pilot_busi_unet_boundary_l0.1_K16_s0 ep 59 loss 0.2436 ep_secs 7.2
+v2pilot_busi_unet_directional_l1.0_K16_s0 ep 30 loss 0.384 ep_secs 4.9
+/root/modal_app.py:36: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  loss = crit(lg.float(), y); opt.zero_grad(set_to_none=True); scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sch.step()
+v2pilot_busi_unet_bbox_l4.0_K2_s0 ep 30 loss 0.4511 ep_secs 4.6
+/root/modal_app.py:36: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  loss = crit(lg.float(), y); opt.zero_grad(set_to_none=True); scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sch.step()
+v2pilot_busi_unet_directional2_l1.0_K16_s0 ep 0 loss 2.2135 ep_secs 5.3
+v2pilot_busi_unet_directional2_l4.0_K16_s0 ep 0 loss 4.0016 ep_secs 5.2
+v2pilot_busi_unet_directional_l4.0_K16_s0 ep 30 loss 0.6389 ep_secs 5.1
+v2pilot_busi_unet_directional2_l0.25_K16_s0 ep 20 loss 0.6793 ep_secs 5.5
+v2pilot_busi_unet_directional_l1.0_K16_s0 ep 40 loss 0.2594 ep_secs 4.9
+v2pilot_busi_unet_bbox_l4.0_K2_s0 ep 40 loss 0.365 ep_secs 4.6
+v2pilot_busi_unet_directional2_l1.0_K16_s0 ep 10 loss 0.8147 ep_secs 4.9
+v2pilot_busi_unet_directional2_l4.0_K16_s0 ep 10 loss 1.2675 ep_secs 4.9
+DONE v2pilot_mmotu_unet_directional2_l0.25_K16_s0 504
+DONE v2pilot_mmotu_unet_directional2_l1.0_K16_s0 498
+DONE v2pilot_mmotu_unet_directional2_l4.0_K16_s0 495
+DONE v2pilot_busi_unet_dice_bce_l0_K16_s0 282
+v2pilot_busi_unet_directional_l4.0_K16_s0 ep 40 loss 0.4724 ep_secs 5.1
+DONE v2pilot_busi_unet_boundary_l0.1_K16_s0 446
+DONE v2pilot_busi_unet_boundary_l0.5_K16_s0 440
+DONE v2pilot_busi_unet_boundary_l2.0_K16_s0 439
+DONE v2pilot_busi_unet_bbox_l0.25_K2_s0 286
+v2pilot_busi_unet_directional2_l0.25_K16_s0 ep 30 loss 0.3215 ep_secs 5.5
+DONE v2pilot_busi_unet_directional_l0.25_K16_s0 341
+DONE v2pilot_busi_unet_bbox_l1.0_K2_s0 288
+v2pilot_busi_unet_directional_l1.0_K16_s0 ep 50 loss 0.2688 ep_secs 4.8
+v2pilot_busi_unet_bbox_l4.0_K2_s0 ep 50 loss 0.3753 ep_secs 4.6
+v2pilot_busi_unet_directional2_l1.0_K16_s0 ep 20 loss 0.811 ep_secs 4.9
+v2pilot_busi_unet_directional2_l4.0_K16_s0 ep 20 loss 1.1059 ep_secs 4.8
+v2pilot_busi_unet_directional_l4.0_K16_s0 ep 50 loss 0.4141 ep_secs 5.1
+v2pilot_busi_unet_directional_l1.0_K16_s0 ep 59 loss 0.3136 ep_secs 4.9
+v2pilot_busi_unet_bbox_l4.0_K2_s0 ep 59 loss 0.3875 ep_secs 4.6
+v2pilot_busi_unet_directional2_l0.25_K16_s0 ep 40 loss 0.2491 ep_secs 5.5
+DONE v2pilot_busi_unet_directional_l1.0_K16_s0 307
+DONE v2pilot_busi_unet_bbox_l4.0_K2_s0 289
+v2pilot_busi_unet_directional2_l1.0_K16_s0 ep 30 loss 0.4314 ep_secs 4.9
+v2pilot_busi_unet_directional2_l4.0_K16_s0 ep 30 loss 0.682 ep_secs 4.8
+v2pilot_busi_unet_directional_l4.0_K16_s0 ep 59 loss 0.4365 ep_secs 5.0
+DONE v2pilot_busi_unet_directional_l4.0_K16_s0 316
+v2pilot_busi_unet_directional2_l0.25_K16_s0 ep 50 loss 0.2499 ep_secs 5.5
+v2pilot_busi_unet_directional2_l4.0_K16_s0 ep 40 loss 0.7091 ep_secs 4.9
+v2pilot_busi_unet_directional2_l1.0_K16_s0 ep 40 loss 0.4191 ep_secs 4.9
+v2pilot_busi_unet_directional2_l0.25_K16_s0 ep 59 loss 0.2795 ep_secs 5.5
+v2pilot_busi_unet_directional2_l4.0_K16_s0 ep 50 loss 0.5949 ep_secs 4.8
+v2pilot_busi_unet_directional2_l1.0_K16_s0 ep 50 loss 0.4361 ep_secs 4.9
+DONE v2pilot_busi_unet_directional2_l0.25_K16_s0 347
+v2pilot_busi_unet_directional2_l4.0_K16_s0 ep 59 loss 0.5293 ep_secs 4.9
+v2pilot_busi_unet_directional2_l1.0_K16_s0 ep 59 loss 0.4167 ep_secs 4.9
+DONE v2pilot_busi_unet_directional2_l1.0_K16_s0 309
+DONE v2pilot_busi_unet_directional2_l4.0_K16_s0 307
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/buiquangphuong941/main/ap-zonEjWVrugv1Jr3WfDRk3o

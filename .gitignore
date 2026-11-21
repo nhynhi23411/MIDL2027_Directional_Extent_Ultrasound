@@ -1,0 +1,11 @@
+data/
+prep/
+*.zip
+results/viz_probs.pkl
+__pycache__/
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.blg
+paper/pg*.png
+paper/p1.png

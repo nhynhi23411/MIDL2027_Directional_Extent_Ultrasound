@@ -1,0 +1,143 @@
+\begin{thebibliography}{21}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Al-Dhabyani et~al.(2020)Al-Dhabyani, Gomaa, Khaled, and
+  Fahmy]{aldhabyani2020busi}
+Walid Al-Dhabyani, Mohammed Gomaa, Hussien Khaled, and Aly Fahmy.
+\newblock Dataset of breast ultrasound images.
+\newblock \emph{Data in Brief}, 28:\penalty0 104863, 2020.
+\newblock \doi{10.1016/j.dib.2019.104863}.
+
+\bibitem[{American College of Radiology}(2013)]{acr2013birads}
+{American College of Radiology}.
+\newblock \emph{{ACR BI-RADS} Atlas: Breast Imaging Reporting and Data System}.
+\newblock American College of Radiology, 5th edition, 2013.
+
+\bibitem[Chen et~al.(2018)Chen, Zhu, Papandreou, Schroff, and
+  Adam]{chen2018deeplab}
+Liang-Chieh Chen, Yukun Zhu, George Papandreou, Florian Schroff, and Hartwig
+  Adam.
+\newblock Encoder-decoder with atrous separable convolution for semantic image
+  segmentation.
+\newblock In \emph{ECCV}, 2018.
+
+\bibitem[Field and Welsh(2007)]{field2007bootstrap}
+C.~A. Field and A.~H. Welsh.
+\newblock Bootstrapping clustered data.
+\newblock \emph{Journal of the Royal Statistical Society: Series B},
+  69\penalty0 (3):\penalty0 369--390, 2007.
+
+\bibitem[He et~al.(2016)He, Zhang, Ren, and Sun]{he2016resnet}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+\newblock Deep residual learning for image recognition.
+\newblock In \emph{CVPR}, 2016.
+
+\bibitem[Huber(1964)]{huber1964robust}
+Peter~J. Huber.
+\newblock Robust estimation of a location parameter.
+\newblock \emph{Annals of Mathematical Statistics}, 35\penalty0 (1):\penalty0
+  73--101, 1964.
+
+\bibitem[Iakubovskii(2019)]{iakubovskii2019smp}
+Pavel Iakubovskii.
+\newblock Segmentation models pytorch.
+\newblock \url{https://github.com/qubvel/segmentation_models.pytorch}, 2019.
+
+\bibitem[Isensee et~al.(2021)Isensee, Jaeger, Kohl, Petersen, and
+  Maier-Hein]{isensee2021nnunet}
+Fabian Isensee, Paul~F. Jaeger, Simon A.~A. Kohl, Jens Petersen, and Klaus~H.
+  Maier-Hein.
+\newblock {nnU-Net}: a self-configuring method for deep learning-based
+  biomedical image segmentation.
+\newblock \emph{Nature Methods}, 18:\penalty0 203--211, 2021.
+
+\bibitem[Karimi and Salcudean(2020)]{karimi2020hd}
+Davood Karimi and Septimiu~E. Salcudean.
+\newblock Reducing the {H}ausdorff distance in medical image segmentation with
+  convolutional neural networks.
+\newblock \emph{IEEE Transactions on Medical Imaging}, 39\penalty0
+  (2):\penalty0 499--513, 2020.
+
+\bibitem[Kervadec et~al.(2019)Kervadec, Bouchtiba, Desrosiers, Granger, Dolz,
+  and Ben~Ayed]{kervadec2019boundary}
+Hoel Kervadec, Jihene Bouchtiba, Christian Desrosiers, Eric Granger, Jose Dolz,
+  and Ismail Ben~Ayed.
+\newblock Boundary loss for highly unbalanced segmentation.
+\newblock In \emph{Proceedings of MIDL}, volume 102 of \emph{PMLR}, pages
+  285--296, 2019.
+
+\bibitem[Loshchilov and Hutter(2019)]{loshchilov2019adamw}
+Ilya Loshchilov and Frank Hutter.
+\newblock Decoupled weight decay regularization.
+\newblock In \emph{ICLR}, 2019.
+
+\bibitem[Ma et~al.(2021)Ma, Chen, Ng, Huang, Li, Li, Yang, and
+  Martel]{ma2021loss}
+Jun Ma, Jianan Chen, Matthew Ng, Rui Huang, Yu~Li, Chen Li, Xiaoping Yang, and
+  Anne~L. Martel.
+\newblock Loss odyssey in medical image segmentation.
+\newblock \emph{Medical Image Analysis}, 71:\penalty0 102035, 2021.
+
+\bibitem[Maier-Hein et~al.(2024)Maier-Hein, Reinke,
+  et~al.]{maierhein2024metrics}
+Lena Maier-Hein, Annika Reinke, et~al.
+\newblock Metrics reloaded: recommendations for image analysis validation.
+\newblock \emph{Nature Methods}, 21:\penalty0 195--212, 2024.
+
+\bibitem[Milletari et~al.(2016)Milletari, Navab, and Ahmadi]{milletari2016vnet}
+Fausto Milletari, Nassir Navab, and Seyed-Ahmad Ahmadi.
+\newblock {V-Net}: Fully convolutional neural networks for volumetric medical
+  image segmentation.
+\newblock In \emph{International Conference on 3D Vision (3DV)}, pages
+  565--571, 2016.
+
+\bibitem[Reinke et~al.(2024)Reinke, Tizabi, Baumgartner,
+  et~al.]{reinke2024pitfalls}
+Annika Reinke, Minu~D. Tizabi, Michael Baumgartner, et~al.
+\newblock Understanding metric-related pitfalls in image analysis validation.
+\newblock \emph{Nature Methods}, 21:\penalty0 182--194, 2024.
+
+\bibitem[Ronneberger et~al.(2015)Ronneberger, Fischer, and
+  Brox]{ronneberger2015unet}
+Olaf Ronneberger, Philipp Fischer, and Thomas Brox.
+\newblock U-net: Convolutional networks for biomedical image segmentation.
+\newblock In \emph{MICCAI}, 2015.
+
+\bibitem[Shit et~al.(2021)Shit, Paetzold, Sekuboyina, Ezhov, Unger, Zhylka,
+  Pluim, Bauer, and Menze]{shit2021cldice}
+Suprosanna Shit, Johannes~C. Paetzold, Anjany Sekuboyina, Ivan Ezhov, Alexander
+  Unger, Andrey Zhylka, Josien P.~W. Pluim, Ulrich Bauer, and Bjoern~H. Menze.
+\newblock {clDice} -- a novel topology-preserving loss function for tubular
+  structure segmentation.
+\newblock In \emph{CVPR}, pages 16560--16569, 2021.
+
+\bibitem[Taha and Hanbury(2015)]{taha2015metrics}
+Abdel~Aziz Taha and Allan Hanbury.
+\newblock Metrics for evaluating {3D} medical image segmentation: analysis,
+  selection, and tool.
+\newblock \emph{BMC Medical Imaging}, 15:\penalty0 29, 2015.
+
+\bibitem[Timmerman et~al.(2008)Timmerman, Testa, Bourne,
+  et~al.]{timmerman2008iota}
+Dirk Timmerman, Antonia~C. Testa, Tom Bourne, et~al.
+\newblock Simple ultrasound-based rules for the diagnosis of ovarian cancer.
+\newblock \emph{Ultrasound in Obstetrics \& Gynecology}, 31\penalty0
+  (6):\penalty0 681--690, 2008.
+
+\bibitem[Xian et~al.(2018)Xian, Zhang, Cheng, Xu, Zhang, and Ding]{xian2018bus}
+Min Xian, Yingtao Zhang, H.~D. Cheng, Fei Xu, Boyu Zhang, and Jianrui Ding.
+\newblock Automatic breast ultrasound image segmentation: A survey.
+\newblock \emph{Pattern Recognition}, 79:\penalty0 340--355, 2018.
+
+\bibitem[Zhao et~al.(2022)Zhao, Lyu, Bai, Cai, Liu, Wu, Sang, Yang, and
+  Chen]{zhao2022mmotu}
+Qi~Zhao, Shuchang Lyu, Wenpei Bai, Linghan Cai, Binghao Liu, Meijing Wu, Xiubo
+  Sang, Min Yang, and Lijiang Chen.
+\newblock Multi-modality ovarian tumor ultrasound image dataset for
+  unsupervised cross-domain semantic segmentation, 2022.
+
+\end{thebibliography}
